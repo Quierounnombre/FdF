@@ -6,7 +6,7 @@
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 14:38:50 by vicgarci          #+#    #+#             */
-/*   Updated: 2022/11/17 15:26:39 by vicgarci         ###   ########.fr       */
+/*   Updated: 2022/11/17 17:03:17 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,25 @@
 
 static void	parse_log(int argc, const char c);
 
-int	parse(int argc, const char **argv)
+int	parse(int argc, char **argv)
 {
+	size_t	i;
+
+	i = 0;
 	if (argc != MAX_ARGS)
 	{
-		parse_log(argc, *argv[1]);
+		parse_log(argc, argv[1][i]);
 		return (false);
 	}
 	while (true)
 	{
-		if (!(ft_isalnum(*argv[1])))
+		if (!(ft_isalnum(argv[1][i])))
 		{
-			parse_log(argc, *argv[1]);
+			parse_log(argc, argv[1][i]);
 			return (false);
 		}
-		argv[1]++;
-		if (*argv[1] == '\0')
+		i++;
+		if (argv[1][i] == '\0')
 			break ;
 	}
 	return (true);

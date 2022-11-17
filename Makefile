@@ -6,7 +6,7 @@
 #    By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/17 14:56:53 by vicgarci          #+#    #+#              #
-#    Updated: 2022/11/17 15:19:10 by vicgarci         ###   ########.fr        #
+#    Updated: 2022/11/17 17:04:58 by vicgarci         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,11 +14,12 @@ NAME = FdF
 LIBFT = libft_def/libftprintf.a
 
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror -O3
+CFLAGS = -Wall -Wextra -Werror -fsanitize=address -O3
 RM = rm -f
 
 FILES = main.c \
-		parse.c
+		parse.c \
+		store_file.c
 
 OBJS = ${FILES:.c=.o}
 
