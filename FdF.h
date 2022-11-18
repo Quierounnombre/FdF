@@ -6,7 +6,7 @@
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 14:30:33 by vicgarci          #+#    #+#             */
-/*   Updated: 2022/11/17 17:01:16 by vicgarci         ###   ########.fr       */
+/*   Updated: 2022/11/18 14:36:19 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,20 @@
 
 # define MAX_ARGS 2
 
-int		parse(int argc, char **argv);
-char	**store_file(int fd);
+typedef struct s_map
+{
+	int	**map;
+	int	map_size_x;
+	int	map_size_y;
+}			t_map;
+
+typedef struct s_FdF_info
+{
+	t_map	map;
+}				t_FdF_info;
+
+int			parse(int argc, char **argv);
+char		**store_file(int fd);
+t_FdF_info	*init_struct(void);
 
 #endif

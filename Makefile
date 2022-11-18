@@ -6,7 +6,7 @@
 #    By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/17 14:56:53 by vicgarci          #+#    #+#              #
-#    Updated: 2022/11/17 17:04:58 by vicgarci         ###   ########.fr        #
+#    Updated: 2022/11/18 14:26:48 by vicgarci         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,8 @@ RM = rm -f
 
 FILES = main.c \
 		parse.c \
-		store_file.c
+		store_file.c \
+		init_struct.c
 
 OBJS = ${FILES:.c=.o}
 
