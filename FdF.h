@@ -6,7 +6,7 @@
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 14:30:33 by vicgarci          #+#    #+#             */
-/*   Updated: 2022/11/18 14:36:19 by vicgarci         ###   ########.fr       */
+/*   Updated: 2022/11/18 18:04:20 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,11 @@ typedef struct s_map
 
 typedef struct s_FdF_info
 {
-	t_map	map;
+	t_map	*map;
 }				t_FdF_info;
 
 int			parse(int argc, char **argv);
-char		**store_file(int fd);
+int			**store_file(int fd, t_map *map);
 t_FdF_info	*init_struct(void);
 
 #endif

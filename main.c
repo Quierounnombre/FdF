@@ -6,7 +6,7 @@
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 14:24:17 by vicgarci          #+#    #+#             */
-/*   Updated: 2022/11/18 14:37:32 by vicgarci         ###   ########.fr       */
+/*   Updated: 2022/11/18 18:48:24 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,17 @@
 int	main(int argc, char **argv)
 {
 	int			fd;
-	char		**s;
 	t_FdF_info	*fdf_info;
 
-	fdf_info = init_struct();
-	ft_printf("%p", fdf_info);
 	if (parse(argc, argv))
 	{
 		fd = open(argv[1], O_RDONLY);
 		if (fd >= 0)
 		{
-			s = store_file(fd);
+			fdf_info = init_struct();
+			if (store_file(fd, fdf_info->map))
+				ft_printf("\nAlmaceno");
+			/*
 			if (s)
 			{
 				ft_printf("%s", s[0]);
@@ -34,9 +34,7 @@ int	main(int argc, char **argv)
 				while (*s)
 					free(*(s++));
 				free(s);
-			}
-			else
-				ft_printf("He devuelto null");
+			}*/
 		}
 		else
 			ft_printf("No he podido abrir el archivo, %s %d", argv[1], fd);

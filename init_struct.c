@@ -6,7 +6,7 @@
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 13:55:46 by vicgarci          #+#    #+#             */
-/*   Updated: 2022/11/18 15:15:23 by vicgarci         ###   ########.fr       */
+/*   Updated: 2022/11/18 18:29:22 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,9 @@ t_FdF_info	*init_struct(void)
 		map = (t_map *) malloc(sizeof(t_map));
 		if (map)
 		{
-			struk->map = *map;
-			init_map(&struk->map);
-			if (struk->map.map)
+			struk->map = map;
+			init_map(struk->map);
+			if (struk->map->map)
 			{
 				return (struk);
 			}
@@ -40,10 +40,10 @@ t_FdF_info	*init_struct(void)
 
 static void	init_map(t_map *map)
 {
-	map->map = (int **) malloc (sizeof(int **));
+	map->map = (int **) malloc (sizeof(int *));
 	if (map->map)
 	{
-		map->map_size_y = 1;
-		map->map_size_x = 1;
+		map->map_size_y = 0;
+		map->map_size_x = 0;
 	}
 }
