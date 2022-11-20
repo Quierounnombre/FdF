@@ -6,7 +6,7 @@
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 13:55:46 by vicgarci          #+#    #+#             */
-/*   Updated: 2022/11/18 18:29:22 by vicgarci         ###   ########.fr       */
+/*   Updated: 2022/11/20 18:17:46 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ static void	init_map(t_map *map)
 	map->map = (int **) malloc (sizeof(int *));
 	if (map->map)
 	{
-		map->map_size_y = 0;
+		map->map_size_y = 1;
 		map->map_size_x = 0;
 	}
 }
