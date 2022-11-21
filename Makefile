@@ -6,7 +6,7 @@
 #    By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/17 14:56:53 by vicgarci          #+#    #+#              #
-#    Updated: 2022/11/20 18:17:27 by vicgarci         ###   ########.fr        #
+#    Updated: 2022/11/21 16:51:47 by vicgarci         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,9 @@ FILES = main.c \
 		parse.c \
 		store_file.c \
 		init_struct.c \
-		store_line.c
+		store_line.c \
+		free_map.c \
+		free_struct.c \
 
 OBJS = ${FILES:.c=.o}
 

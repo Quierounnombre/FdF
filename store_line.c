@@ -6,7 +6,7 @@
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/20 18:14:49 by vicgarci          #+#    #+#             */
-/*   Updated: 2022/11/21 15:35:29 by vicgarci         ###   ########.fr       */
+/*   Updated: 2022/11/21 16:37:37 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,6 @@ t_bool	store_line(const char *s, t_map *map, int line)
 				return (true);
 		}
 	}
-	ft_printf("\nerror\n");
 	return (false);
 }
 
@@ -116,9 +115,6 @@ static t_bool	copy_map(t_map *map, int lenght)
 
 static t_bool	expand_len(char c, t_bool *alloc, t_bool *minus, t_bool *space)
 {
-	ft_printf("valor de alloc %d\n", *alloc);
-	ft_printf("Valor de minus %d\n", *minus);
-	ft_printf("Valor de space %d\n", *space);
 	if (ft_isspace(c))
 	{
 		*alloc = true;

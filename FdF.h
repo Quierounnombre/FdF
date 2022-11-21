@@ -6,7 +6,7 @@
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 14:30:33 by vicgarci          #+#    #+#             */
-/*   Updated: 2022/11/20 18:17:06 by vicgarci         ###   ########.fr       */
+/*   Updated: 2022/11/21 16:51:30 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,10 @@ typedef struct s_FdF_info
 }			t_FdF_info;
 
 int			parse(int argc, char **argv);
-int			**store_file(int fd, t_map *map);
+t_bool		store_file(int fd, t_map *map);
 t_bool		store_line(const char *s, t_map *map, int line);
 t_FdF_info	*init_struct(void);
+void		free_map(t_map *map);
+void		free_struct(t_FdF_info *fdf);
 
 #endif

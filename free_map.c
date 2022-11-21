@@ -1,36 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   store_file.c                                       :+:      :+:    :+:   */
+/*   free_map.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/17 16:02:35 by vicgarci          #+#    #+#             */
-/*   Updated: 2022/11/21 16:57:49 by vicgarci         ###   ########.fr       */
+/*   Created: 2022/11/21 15:44:32 by vicgarci          #+#    #+#             */
+/*   Updated: 2022/11/21 16:01:38 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FdF.h"
 
-t_bool	store_file(int fd, t_map *map)
+void	free_map(t_map *map)
 {
-	char	*s;
-	size_t	len;
-	int		line;
+	int	i;
 
-	s = "Hola";
-	len = 0;
-	line = 0;
-	while (s)
+	i = 0;
+	while ((i + 1) != map->map_size_y)
 	{
-		s = ft_get_next_line(fd);
-		if (s)
-		{
-			if (store_line(s, map, line))
-				line++;
-			else
-				return (false);
-		}
+		free(map->map[i]);
+		i++;
 	}
-	return (true);
+	free (map->map);
 }

@@ -3,5 +3,6 @@ Archivo con algo distinto a isspace y numeros: OK
 Archivo con una x inconsistente: OK
 Archivo con valores negativos: OK
 Archivo con nombres con " " o "_": ?
+Archivo con 2 menos: ?
 
 free de todo en caso de error: ?
