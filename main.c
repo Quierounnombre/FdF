@@ -6,7 +6,7 @@
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 14:24:17 by vicgarci          #+#    #+#             */
-/*   Updated: 2022/11/21 16:58:26 by vicgarci         ###   ########.fr       */
+/*   Updated: 2022/11/21 17:54:07 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ int	main(int argc, char **argv)
 			fdf_info = init_struct();
 			if (store_file(fd, fdf_info->map))
 				ft_printf("\nAlmaceno");
-			ft_printf("Limpio");
-			free_struct(fdf_info);
+			else
+				free_struct(fdf_info);
 			/*
 			if (s)
 			{
@@ -41,4 +41,5 @@ int	main(int argc, char **argv)
 		else
 			ft_printf("No he podido abrir el archivo, %s %d", argv[1], fd);
 	}
+	system("leaks FdF");
 }
