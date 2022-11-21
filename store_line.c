@@ -6,7 +6,7 @@
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/20 18:14:49 by vicgarci          #+#    #+#             */
-/*   Updated: 2022/11/21 14:54:38 by vicgarci         ###   ########.fr       */
+/*   Updated: 2022/11/21 15:35:29 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ t_bool	store_line(const char *s, t_map *map, int line)
 			while (s && *s != '\n')
 			{
 				map->map[line][i] = ft_atoi(s);
-				ft_printf("Valor de %d %d -> %d\n", line, i, map->map[line][i]);
 				len = move_len(s);
 				while (len--)
 					s++;
@@ -68,10 +67,9 @@ static int	calc_len(const char *s)
 				double_space = false;
 			}
 		}
-		if (expand_len(*s, &alloc_int, &double_minus, &double_space))
-			s++;
-		else
+		if (!expand_len(*s, &alloc_int, &double_minus, &double_space))
 			return (0);
+		s++;
 	}
 	return (i);
 }

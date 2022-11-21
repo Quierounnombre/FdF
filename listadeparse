@@ -1,7 +1,7 @@
-Archivo vacio: ?
-Archivo con algo distinto a isspace y numeros: ?
-Archivo con una x inconsistente: ?
-Archivo con valores negativos: ?
+Archivo vacio: OK
+Archivo con algo distinto a isspace y numeros: OK
+Archivo con una x inconsistente: OK
+Archivo con valores negativos: OK
 Archivo con nombres con " " o "_": ?
 
 free de todo en caso de error: ?
