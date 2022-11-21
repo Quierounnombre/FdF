@@ -6,7 +6,7 @@
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 14:38:50 by vicgarci          #+#    #+#             */
-/*   Updated: 2022/11/17 17:03:17 by vicgarci         ###   ########.fr       */
+/*   Updated: 2022/11/21 18:46:03 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,8 @@ int	parse(int argc, char **argv)
 	}
 	while (true)
 	{
-		if (!(ft_isalnum(argv[1][i])))
+		if (!(ft_isalnum(argv[1][i])) || argv[1][i] != ' ' || argv[1][i] != '_'
+		|| argv[1][i] != '-')
 		{
 			parse_log(argc, argv[1][i]);
 			return (false);

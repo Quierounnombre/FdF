@@ -6,7 +6,7 @@
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 14:24:17 by vicgarci          #+#    #+#             */
-/*   Updated: 2022/11/21 17:54:07 by vicgarci         ###   ########.fr       */
+/*   Updated: 2022/11/21 18:41:20 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,16 +27,6 @@ int	main(int argc, char **argv)
 				ft_printf("\nAlmaceno");
 			else
 				free_struct(fdf_info);
-			/*
-			if (s)
-			{
-				ft_printf("%s", s[0]);
-				ft_printf("%s", s[1]);
-				ft_printf("%s", s[2]);
-				while (*s)
-					free(*(s++));
-				free(s);
-			}*/
 		}
 		else
 			ft_printf("No he podido abrir el archivo, %s %d", argv[1], fd);

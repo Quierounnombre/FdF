@@ -6,7 +6,7 @@
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 16:02:35 by vicgarci          #+#    #+#             */
-/*   Updated: 2022/11/21 17:53:33 by vicgarci         ###   ########.fr       */
+/*   Updated: 2022/11/21 18:38:35 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,10 @@ t_bool	store_file(int fd, t_map *map)
 			if (store_line(s, map, line))
 				line++;
 			else
+			{
+				free(s);
 				return (false);
+			}
 			free(s);
 		}
 	}

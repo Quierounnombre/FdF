@@ -2,7 +2,8 @@ Archivo vacio: OK
 Archivo con algo distinto a isspace y numeros: OK
 Archivo con una x inconsistente: OK
 Archivo con valores negativos: OK
-Archivo con nombres con " " o "_": ?
-Archivo con 2 menos: ?
+Archivo con nombres con " " o "_": OK
+Archivo con 2 menos: OK
+Archivo con valores en hexa: ?
 
 free de todo en caso de error: ?
