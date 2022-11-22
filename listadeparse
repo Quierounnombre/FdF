@@ -5,5 +5,6 @@ Archivo con valores negativos : OK
 Archivo con nombres con " " o "_" : OK
 Archivo con 2 menos : OK
 Archivo con colores : ?
+Archivo con '-' sueltos :
 
 free de todo en caso de error: ?

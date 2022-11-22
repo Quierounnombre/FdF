@@ -6,7 +6,7 @@
 #    By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/17 14:56:53 by vicgarci          #+#    #+#              #
-#    Updated: 2022/11/22 15:57:41 by vicgarci         ###   ########.fr        #
+#    Updated: 2022/11/22 20:56:36 by vicgarci         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = FdF
 LIBFT = libft_def/libftprintf.a
 
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror -fsanitize=address -O3
+CFLAGS = -Wall -Wextra -Werror -O3 -fsanitize=address
 RM = rm -f
 
 FILES = main.c \
@@ -24,6 +24,7 @@ FILES = main.c \
 		store_line.c \
 		free_map.c \
 		free_struct.c \
+		calc_line_size.c
 
 OBJS = ${FILES:.c=.o}
 
