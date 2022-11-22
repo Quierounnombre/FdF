@@ -6,7 +6,7 @@
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 14:24:17 by vicgarci          #+#    #+#             */
-/*   Updated: 2022/11/21 18:41:20 by vicgarci         ###   ########.fr       */
+/*   Updated: 2022/11/22 15:57:03 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,12 @@ int	main(int argc, char **argv)
 		{
 			fdf_info = init_struct();
 			if (store_file(fd, fdf_info->map))
-				ft_printf("\nAlmaceno");
+				ft_printf("\nAlmaceno\n");
 			else
 				free_struct(fdf_info);
 		}
 		else
 			ft_printf("No he podido abrir el archivo, %s %d", argv[1], fd);
 	}
-	system("leaks FdF");
+	//system("leaks FdF");
 }

@@ -6,7 +6,7 @@
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/20 18:14:49 by vicgarci          #+#    #+#             */
-/*   Updated: 2022/11/21 18:30:33 by vicgarci         ###   ########.fr       */
+/*   Updated: 2022/11/22 16:00:16 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 static t_bool	copy_map(t_map *map, int lenght);
 static int		calc_len(const char *s);
 static int		move_len(const char *s);
-static t_bool	expand_len(char c, t_bool *alloc, t_bool *minus, t_bool *space);
+static t_bool	expand_len(char c, t_bool *alloc, char *dup, t_bool *hexa);
 
 t_bool	store_line(const char *s, t_map *map, int line)
 {
@@ -44,49 +44,6 @@ t_bool	store_line(const char *s, t_map *map, int line)
 	return (false);
 }
 
-static int	calc_len(const char *s)
-{
-	size_t	i;
-	t_bool	alloc_int;
-	t_bool	double_minus;
-	t_bool	double_space;
-
-	i = 0;
-	alloc_int = true;
-	double_minus = false;
-	double_space = false;
-	while (*s != '\0')
-	{
-		if (ft_isdigit(*s))
-		{
-			if (alloc_int)
-			{
-				i++;
-				alloc_int = false;
-				double_space = false;
-			}
-		}
-		if (!expand_len(*s, &alloc_int, &double_minus, &double_space))
-			return (0);
-		s++;
-	}
-	return (i);
-}
-
-static int	move_len(const char *s)
-{
-	size_t	i;
-
-	i = 0;
-	while (ft_isspace(s[i]))
-		i++;
-	if (s[i] == '-')
-		i++;
-	while (ft_isdigit(s[i]))
-		i++;
-	return (i);
-}
-
 static t_bool	copy_map(t_map *map, int lenght)
 {
 	int		**new_map;
@@ -113,25 +70,90 @@ static t_bool	copy_map(t_map *map, int lenght)
 	return (false);
 }
 
-static t_bool	expand_len(char c, t_bool *alloc, t_bool *minus, t_bool *space)
+static t_bool	expand_len(char c, t_bool *alloc, char *dup, t_bool *hexa)
 {
-	if (ft_isspace(c))
+	static int	hexa_counter;
+
+	ft_printf("Valor de dup: %d\n", *dup);
+	if (ft_isspace(c) && *dup != c)
 	{
+		ft_printf("He encontrado un espacio\n");
 		*alloc = true;
-		if (*space)
-			return (false);
-		else
-			*space = true;
-		return (true);
+		hexa_counter = 0;
+		*hexa = false;
 	}
-	else if (*minus && c == '-')
-		return (false);
-	else if (c == '-')
+	else if (*hexa)
 	{
-		*minus = true;
-		return (true);
+		ft_printf("Entro en hexa\n");
+		if (c == 'x' && *dup != c)
+			*dup = c;
+		if (ft_ishexa(c) && hexa_counter != 7)
+			hexa_counter++;
 	}
-	else if (!ft_isdigit(c))
+	else if (*dup == c)
+	{
+		ft_printf("He encontrado un duplicado\n");
 		return (false);
+	}
+	else if (!ft_ishexa(c) && c != 'x' && c != ',' && c != ' ' && c != '-')
+		return (false);
+	if (c == '-' || c == 'x' || c == ' ')
+	{
+		ft_printf("He encontrado un <%c>\n", c);
+		*dup = c;
+	}
 	return (true);
+}
+
+static int	calc_len(const char *s)
+{
+	size_t	i;
+	t_bool	alloc_int;
+	char	dup;
+	t_bool	hexa;
+
+	i = 0;
+	alloc_int = true;
+	dup = '\0';
+	hexa = false;
+	while (*s != '\0' && *s != '\n')
+	{
+		if (ft_isdigit(*s) && alloc_int)
+		{
+			i++;
+			alloc_int = false;
+			dup = 0;
+			ft_printf("He encontrado un digito\n");
+		}
+		if (*s == ',')
+		{
+			ft_printf("He encontrado una coma\n");
+			hexa = true;
+		}
+		if (!expand_len(*s, &alloc_int, &dup, &hexa))
+			return (0);
+		s++;
+	}
+	ft_printf("\n Calc_len devuelve con %d\n", i);
+	return (i);
+}
+
+static int	move_len(const char *s)
+{
+	size_t	i;
+
+	i = 0;
+	while (ft_isspace(s[i]))
+		i++;
+	if (s[i] == '-')
+		i++;
+	while (ft_isdigit(s[i]))
+		i++;
+	if (s[i] == ',')
+	{
+		i += 3;
+		while (ft_ishexa(s[i]))
+			i++;
+	}
+	return (i);
 }
