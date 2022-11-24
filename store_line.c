@@ -6,7 +6,7 @@
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/20 18:14:49 by vicgarci          #+#    #+#             */
-/*   Updated: 2022/11/22 16:36:01 by vicgarci         ###   ########.fr       */
+/*   Updated: 2022/11/24 14:44:42 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@ t_bool	store_line(const char *s, t_map *map, int line)
 	int	len;
 
 	i = 0;
-	len = calc_line_size((char *)s);
+	len = calc_len((char *)s);
+	ft_printf("La linea mide -> %d\n", len);
 	if (len)
 	{
 		map->map[line] = (int *) malloc(sizeof(int) * len);

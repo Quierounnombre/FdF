@@ -6,7 +6,7 @@
 #    By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/17 14:56:53 by vicgarci          #+#    #+#              #
-#    Updated: 2022/11/22 20:56:36 by vicgarci         ###   ########.fr        #
+#    Updated: 2022/11/24 14:36:08 by vicgarci         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ FILES = main.c \
 		store_line.c \
 		free_map.c \
 		free_struct.c \
-		calc_line_size.c
+		calc_len.c
 
 OBJS = ${FILES:.c=.o}
 

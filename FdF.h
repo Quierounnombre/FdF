@@ -6,7 +6,7 @@
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 14:30:33 by vicgarci          #+#    #+#             */
-/*   Updated: 2022/11/22 16:35:13 by vicgarci         ###   ########.fr       */
+/*   Updated: 2022/11/24 15:00:33 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,6 @@ t_bool		store_line(const char *s, t_map *map, int line);
 t_FdF_info	*init_struct(void);
 void		free_map(t_map *map);
 void		free_struct(t_FdF_info *fdf);
-int			calc_line_size(const char *s);
+int			calc_len(char *s);
 
 #endif
