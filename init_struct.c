@@ -6,7 +6,7 @@
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 13:55:46 by vicgarci          #+#    #+#             */
-/*   Updated: 2022/11/20 18:17:46 by vicgarci         ###   ########.fr       */
+/*   Updated: 2022/11/24 16:06:45 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ t_FdF_info	*init_struct(void)
 
 static void	init_map(t_map *map)
 {
-	map->map = (int **) malloc (sizeof(int *));
+	map->map = (t_pixel **) malloc (sizeof(t_pixel *));
 	if (map->map)
 	{
 		map->map_size_y = 1;

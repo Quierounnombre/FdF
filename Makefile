@@ -6,7 +6,7 @@
 #    By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/17 14:56:53 by vicgarci          #+#    #+#              #
-#    Updated: 2022/11/24 14:36:08 by vicgarci         ###   ########.fr        #
+#    Updated: 2022/11/24 16:18:54 by vicgarci         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = FdF
 LIBFT = libft_def/libftprintf.a
 
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror -O3 -fsanitize=address
+CFLAGS = -Wall -Wextra -Werror -O3 #-fsanitize=address
 RM = rm -f
 
 FILES = main.c \

@@ -6,7 +6,7 @@
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/20 18:14:49 by vicgarci          #+#    #+#             */
-/*   Updated: 2022/11/24 14:44:42 by vicgarci         ###   ########.fr       */
+/*   Updated: 2022/11/24 17:10:11 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,28 +14,22 @@
 
 static t_bool	copy_map(t_map *map, int lenght);
 static int		move_len(const char *s);
+static void		store_pixel(int *i, int line, t_map *map, char **s);
 
-t_bool	store_line(const char *s, t_map *map, int line)
+t_bool	store_line(char *s, t_map *map, int line)
 {
 	int	i;
 	int	len;
 
 	i = 0;
 	len = calc_len((char *)s);
-	ft_printf("La linea mide -> %d\n", len);
 	if (len)
 	{
-		map->map[line] = (int *) malloc(sizeof(int) * len);
+		map->map[line] = (t_pixel *) malloc(sizeof(t_pixel) * len);
 		if (map->map[line])
 		{
-			while (s && *s != '\n')
-			{
-				map->map[line][i] = ft_atoi(s);
-				len = move_len(s);
-				while (len--)
-					s++;
-				i++;
-			}
+			while (*s != '\0' && *s != '\n')
+				store_pixel(&i, line, map, &s);
 			if (copy_map(map, i))
 				return (true);
 		}
@@ -43,13 +37,32 @@ t_bool	store_line(const char *s, t_map *map, int line)
 	return (false);
 }
 
+static void	store_pixel(int *i, int line, t_map *map, char **s)
+{
+	int	len;
+
+	map->map[line][*i].pixel = ft_atoi((*s));
+	len = move_len(*s);
+	while (len--)
+		(*s)++;
+	if (**s == ',')
+	{
+		(*s) += 3;
+		map->map[line][*i].color = ft_atoi_base((*s), "0123456789ABCDEF");
+		(*s) += 6;
+	}
+	else
+		map->map[line][*i].color = 255;
+	(*i)++;
+}
+
 static t_bool	copy_map(t_map *map, int lenght)
 {
-	int		**new_map;
+	t_pixel	**new_map;
 	int		i;
 
 	i = 0;
-	new_map = (int **)malloc(sizeof(int *) * (map->map_size_y + 1));
+	new_map = (t_pixel **)malloc(sizeof(t_pixel *) * (map->map_size_y + 1));
 	if (new_map)
 	{
 		while (i != map->map_size_y)
@@ -80,11 +93,5 @@ static int	move_len(const char *s)
 		i++;
 	while (ft_isdigit(s[i]))
 		i++;
-	if (s[i] == ',')
-	{
-		i += 3;
-		while (ft_ishexa(s[i]))
-			i++;
-	}
 	return (i);
 }
