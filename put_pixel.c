@@ -1,26 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   put_pixel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/17 14:24:17 by vicgarci          #+#    #+#             */
-/*   Updated: 2022/11/25 19:10:31 by vicgarci         ###   ########.fr       */
+/*   Created: 2022/11/25 18:38:43 by vicgarci          #+#    #+#             */
+/*   Updated: 2022/11/25 18:50:39 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FdF.h"
 
-int	main(int argc, char **argv)
+void	put_pixel(t_img *img, int pos_x, int pos_y, int color)
 {
-	t_FdF_info	*fdf;
+	char	*pxl;
+	size_t	move_pxl;
 
-	if (init(argc, argv, &fdf))
-	{
-		new_img(100, 100, &fdf->img);
-		mlx_put_image_to_window(fdf->mlx, fdf->win, fdf->img->img, 0, 0);
-		mlx_loop(fdf->mlx);
-	}
-	system("leaks FdF");
+	move_pxl = (pos_y * img->line_length + pos_x * (img->bits_per_pixel >> 3));
+	pxl = img->start + move_pxl;
+	*pxl = color;
 }
