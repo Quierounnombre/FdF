@@ -6,7 +6,7 @@
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/25 16:05:24 by vicgarci          #+#    #+#             */
-/*   Updated: 2022/11/25 19:12:30 by vicgarci         ###   ########.fr       */
+/*   Updated: 2022/11/25 19:20:02 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ t_bool	init(int argc, char **argv, t_FdF_info **fdf)
 			}
 			else
 				free_struct(*fdf);
+			close (fd);
 		}
 		else
 			ft_printf("No he podido abrir el archivo, %s %d", argv[1], fd);

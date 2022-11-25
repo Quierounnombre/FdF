@@ -6,7 +6,7 @@
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 16:02:35 by vicgarci          #+#    #+#             */
-/*   Updated: 2022/11/22 15:54:05 by vicgarci         ###   ########.fr       */
+/*   Updated: 2022/11/25 19:22:15 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,6 @@ t_bool	store_file(int fd, t_map *map)
 			ft_printf("\nlinea lista\n");
 		}
 	}
+	close (fd);
 	return (true);
 }
