@@ -6,7 +6,7 @@
 #    By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/17 14:56:53 by vicgarci          #+#    #+#              #
-#    Updated: 2022/11/24 16:18:54 by vicgarci         ###   ########.fr        #
+#    Updated: 2022/11/25 16:48:30 by vicgarci         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = FdF
 LIBFT = libft_def/libftprintf.a
 
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror -O3 #-fsanitize=address
+CFLAGS = -Wall -Wextra -Werror -Imlx -O3 #-fsanitize=address
 RM = rm -f
 
 FILES = main.c \
@@ -24,14 +24,15 @@ FILES = main.c \
 		store_line.c \
 		free_map.c \
 		free_struct.c \
-		calc_len.c
+		calc_len.c \
+		init.c
 
 OBJS = ${FILES:.c=.o}
 
 all: libft $(NAME)
 
 $(NAME): $(OBJS)
-	$(CC) $(CFLAGS) $(LIBFT) $(OBJS) -o $(NAME)
+	$(CC) $(CFLAGS) $(LIBFT) $(OBJS) -Lmlx -lmlx -framework OpenGL -framework AppKit -o $(NAME)
 
 clean:
 	$(RM) $(OBJS)

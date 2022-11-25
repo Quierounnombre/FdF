@@ -6,30 +6,39 @@
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 14:24:17 by vicgarci          #+#    #+#             */
-/*   Updated: 2022/11/24 16:18:43 by vicgarci         ###   ########.fr       */
+/*   Updated: 2022/11/25 17:57:37 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FdF.h"
 
+void	my_mlx_pixel_put(t_img *data, int x, int y, int color)
+{
+	char	*dst;
+
+	dst = data->addr + (y * data->line_length + x * (data->bits_per_pixel / 8));
+	*(unsigned int*)dst = color;
+}
+
 int	main(int argc, char **argv)
 {
-	int			fd;
-	t_FdF_info	*fdf_info;
+	t_FdF_info	*fdf;
 
-	if (parse(argc, argv))
+	if (init(argc, argv, &fdf))
 	{
-		fd = open(argv[1], O_RDONLY);
-		if (fd >= 0)
+		fdf->mlx = mlx_init();
+		if (fdf->mlx)
 		{
-			fdf_info = init_struct();
-			if (store_file(fd, fdf_info->map))
-				ft_printf("\nAlmaceno\n");
-			else
-				free_struct(fdf_info);
+			fdf->win = mlx_new_window(fdf->mlx, 1000, 1000, "FDF");
+			fdf->img->img = mlx_new_image(fdf->img, 1000, 1000);
+			fdf->img->addr = mlx_get_data_addr(fdf->img->img, &fdf->img->bits_per_pixel, &fdf->img->line_length, &fdf->img->endian);
+			my_mlx_pixel_put(fdf->img, 500, 500, 0x00FF0000);
+			my_mlx_pixel_put(fdf->img, 501, 500, 0x00FF0000);
+			my_mlx_pixel_put(fdf->img, 500, 501, 0x00FF0000);
+			my_mlx_pixel_put(fdf->img, 501, 501, 0x00FF0000);
+			mlx_put_image_to_window(fdf->mlx, fdf->win, fdf->img->img, 0, 0);
+			mlx_loop(fdf->mlx);
 		}
-		else
-			ft_printf("No he podido abrir el archivo, %s %d", argv[1], fd);
+		system("leaks FdF");
 	}
-	system("leaks FdF");
 }
