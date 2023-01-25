@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 14:38:50 by vicgarci          #+#    #+#             */
-/*   Updated: 2022/11/22 14:00:27 by vicgarci         ###   ########.fr       */
+/*   Updated: 2023/01/25 14:05:20 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ int	parse(int argc, char **argv)
 	}
 	while (true)
 	{
+		if (argv[1][i] == '\0')
+			break ;
 		if (!(ft_isalnum(argv[1][i])) && argv[1][i] != ' ' && argv[1][i] != '_'
 		&& argv[1][i] != '-' && argv[1][i] != '.')
 		{
@@ -33,8 +35,6 @@ int	parse(int argc, char **argv)
 			return (false);
 		}
 		i++;
-		if (argv[1][i] == '\0')
-			break ;
 	}
 	return (true);
 }
