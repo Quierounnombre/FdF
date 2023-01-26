@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   FdF.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 14:30:33 by vicgarci          #+#    #+#             */
-/*   Updated: 2023/01/25 10:13:53 by marvin           ###   ########.fr       */
+/*   Updated: 2023/01/26 15:21:32 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,11 @@
 # define FDF_H
 
 # include "libft_def/libftprintf.h"
+# include "MLX42/include/MLX42/MLX42.h"
 
 # define Y_SIZE 1000
 # define X_SIZE 1000
+# define NAME "FDF"
 # define MAX_ARGS 2
 
 typedef struct s_pixel

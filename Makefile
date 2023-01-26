@@ -6,15 +6,17 @@
 #    By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/17 14:56:53 by vicgarci          #+#    #+#              #
-#    Updated: 2022/11/25 19:02:32 by vicgarci         ###   ########.fr        #
+#    Updated: 2023/01/26 17:28:48 by vicgarci         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = FdF
 LIBFT = libft_def/libftprintf.a
+MLX42 = MLX42/libmlx42.a
 
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror -Imlx -O3 #-fsanitize=address
+CFLAGS = -Wall -Wextra -Werror -O3 #-fsanitize=address
+MLXFLAGS = -lglfw -L "/Users/vicgarci/.brew/opt/glfw/lib/" -D DEBUG=1
 RM = rm -f
 
 FILES = main.c \
@@ -26,28 +28,32 @@ FILES = main.c \
 		free_struct.c \
 		calc_len.c \
 		init.c \
-		new_img.c \
 		put_pixel.c
 
 OBJS = ${FILES:.c=.o}
 
-all: libft $(NAME)
+all: mlx43 libft $(NAME)
 
 $(NAME): $(OBJS)
-	$(CC) $(CFLAGS) $(LIBFT) $(OBJS) -Lmlx -lmlx -framework OpenGL -framework AppKit -o $(NAME)
+	$(CC) $(CFLAGS) $(LIBFT) $(MLX42) $(MLXFLAGS) $(OBJS) -o $(NAME)
 
 clean:
 	$(RM) $(OBJS)
 	$(MAKE) clean -C ./libft_def
+	$(MAKE)	clean -C ./MLX42
 
 fclean: clean
-	$(RM) $(NAME) $(LIBFT)
+	$(RM) $(NAME) $(LIBFT) $(MLX42)
 
 
-re: fclean libft $(NAME)
+re: fclean libft mlx43 $(NAME)
+
+mlx43:
+	$(MAKE) -C ./MLX42
 
 libft:
 	$(MAKE) -C ./libft_def
+
 
 norma:
 	@echo 6966205b5b2024286e6f726d696e65747465207c206772657020274572726f7227207c207763202d6c29202d65712030205d5d3b207468656e206e6f726d696e657474653b20656c736520286e6f726d696e65747465207c206772657020274572726f7227293b206669 | xxd -r -p | zsh

@@ -3,14 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   init.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/25 16:05:24 by vicgarci          #+#    #+#             */
-/*   Updated: 2023/01/25 14:02:52 by marvin           ###   ########.fr       */
+/*   Updated: 2023/01/26 17:02:54 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FdF.h"
+
+static void	set_mlx(void)
+{
+	mlx_set_setting(MLX_STRETCH_IMAGE, false);
+	mlx_set_setting(MLX_FULLSCREEN, false);
+	mlx_set_setting(MLX_MAXIMIZED, false);
+	mlx_set_setting(MLX_DECORATED, false);
+	mlx_set_setting(MLX_HEADLESS, false);
+}
 
 t_bool	init(int argc, char **argv, t_FdF_info **fdf)
 {
@@ -24,14 +33,14 @@ t_bool	init(int argc, char **argv, t_FdF_info **fdf)
 			*fdf = init_struct();
 			if (store_file(fd, (*fdf)->map))
 			{
-				(*fdf)->mlx = mlx_init();
+				set_mlx();
+				(*fdf)->mlx = mlx_init(X_SIZE, Y_SIZE, NAME, false);
 				if ((*fdf)->mlx)
-				(*fdf)->win = mlx_new_window((*fdf)->mlx, 1000, 1000, "FDF");
-				return (true);
+					return (true);
 			}
-			else
-				free_struct(*fdf);
+			free_struct(*fdf);
 			close (fd);
+			return (false);
 		}
 		else
 			ft_printf("No he podido abrir el archivo, %s %d", argv[1], fd);
