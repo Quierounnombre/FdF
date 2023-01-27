@@ -6,7 +6,7 @@
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 14:30:33 by vicgarci          #+#    #+#             */
-/*   Updated: 2023/01/26 15:21:32 by vicgarci         ###   ########.fr       */
+/*   Updated: 2023/01/26 20:36:46 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ typedef struct s_img
 
 typedef struct s_FdF_info
 {
-	void	*mlx;
+	mlx_t	*mlx;
 	t_img	*img;
 	void	*win;
 	t_map	*map;

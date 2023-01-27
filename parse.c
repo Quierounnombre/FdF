@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 14:38:50 by vicgarci          #+#    #+#             */
-/*   Updated: 2023/01/25 14:05:20 by marvin           ###   ########.fr       */
+/*   Updated: 2023/01/26 20:29:52 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int	parse(int argc, char **argv)
 		if (argv[1][i] == '\0')
 			break ;
 		if (!(ft_isalnum(argv[1][i])) && argv[1][i] != ' ' && argv[1][i] != '_'
-		&& argv[1][i] != '-' && argv[1][i] != '.')
+		&& argv[1][i] != '-' && argv[1][i] != '.' && argv[1][i] != '/')
 		{
 			parse_log(argc, argv[1][i]);
 			return (false);

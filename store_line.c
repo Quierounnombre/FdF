@@ -6,7 +6,7 @@
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/20 18:14:49 by vicgarci          #+#    #+#             */
-/*   Updated: 2022/11/24 17:10:11 by vicgarci         ###   ########.fr       */
+/*   Updated: 2023/01/26 21:49:18 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,10 @@ t_bool	store_line(char *s, t_map *map, int line)
 
 	i = 0;
 	len = calc_len((char *)s);
+	printf("len == %d\n", len);
 	if (len)
 	{
+		ft_printf("HOLA\n");
 		map->map[line] = (t_pixel *) malloc(sizeof(t_pixel) * len);
 		if (map->map[line])
 		{
