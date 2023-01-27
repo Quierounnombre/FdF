@@ -6,7 +6,7 @@
 #    By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/17 14:56:53 by vicgarci          #+#    #+#              #
-#    Updated: 2023/01/27 19:20:38 by vicgarci         ###   ########.fr        #
+#    Updated: 2023/01/27 20:01:43 by vicgarci         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,8 +27,7 @@ FILES = main.c \
 		free_map.c \
 		free_struct.c \
 		calc_len.c \
-		init.c \
-		put_pixel.c
+		init.c 
 
 OBJS = ${FILES:.c=.o}
 

@@ -6,7 +6,7 @@
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/25 16:05:24 by vicgarci          #+#    #+#             */
-/*   Updated: 2023/01/27 19:26:25 by vicgarci         ###   ########.fr       */
+/*   Updated: 2023/01/27 20:17:58 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,20 @@ static void	set_mlx(void)
 	mlx_set_setting(MLX_HEADLESS, false);
 }
 
+static t_bool	ft_mlx_start(t_FdF_info **fdf)
+{
+	set_mlx();
+	(*fdf)->mlx = mlx_init(WIDTH, HEIGHT, NAME, false);
+	if ((*fdf)->mlx)
+	{
+		(*fdf)->img = mlx_new_image((*fdf)->mlx, WIDTH, HEIGHT);
+		if ((*fdf)->img
+			|| (mlx_image_to_window((*fdf)->mlx, (*fdf)->img, 0, 0) > 0))
+			return (true);
+	}
+	return (false);
+}
+
 t_bool	init(int argc, char **argv, t_FdF_info **fdf)
 {
 	int	fd;
@@ -33,14 +47,13 @@ t_bool	init(int argc, char **argv, t_FdF_info **fdf)
 			*fdf = init_struct();
 			if (store_file(fd, (*fdf)->map))
 			{
-				set_mlx();
 				close(fd);
-				(*fdf)->mlx = mlx_init(X_SIZE, Y_SIZE, NAME, false);
-				if ((*fdf)->mlx)
+				if (ft_mlx_start(fdf))
 					return (true);
 			}
 			free_struct(*fdf);
-			close (fd);
+			if (fd)
+				close (fd);
 			return (false);
 		}
 		else

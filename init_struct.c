@@ -6,7 +6,7 @@
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 13:55:46 by vicgarci          #+#    #+#             */
-/*   Updated: 2022/11/25 17:54:30 by vicgarci         ###   ########.fr       */
+/*   Updated: 2023/01/27 20:07:04 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,12 +28,7 @@ t_FdF_info	*init_struct(void)
 			struk->map = map;
 			init_map(struk->map);
 			if (struk->map->map)
-			{
-				struk->img = (t_img *) malloc(sizeof(t_img));
-				if (struk->img)
-					return (struk);
-				free(struk->map);
-			}
+				return (struk);
 			free(map);
 		}
 		free(struk);

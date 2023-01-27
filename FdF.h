@@ -6,7 +6,7 @@
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 14:30:33 by vicgarci          #+#    #+#             */
-/*   Updated: 2023/01/26 20:36:46 by vicgarci         ###   ########.fr       */
+/*   Updated: 2023/01/27 19:56:35 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,18 @@
 # include "libft_def/libftprintf.h"
 # include "MLX42/include/MLX42/MLX42.h"
 
-# define Y_SIZE 1000
-# define X_SIZE 1000
-# define NAME "FDF"
+# ifndef WIDTH
+#  define WIDTH 1000
+# endif
+
+# ifndef HEIGHT
+#  define HEIGHT 1000
+# endif
+
+# ifndef NAME
+#  define NAME "FDF"
+# endif
+
 # define MAX_ARGS 2
 
 typedef struct s_pixel
@@ -34,21 +43,12 @@ typedef struct s_map
 	int		map_size_y;
 }			t_map;
 
-typedef struct s_img
-{
-	void	*img;
-	char	*start;
-	int		bits_per_pixel;
-	int		line_length;
-	int		endian;
-}			t_img;
-
 typedef struct s_FdF_info
 {
-	mlx_t	*mlx;
-	t_img	*img;
-	void	*win;
-	t_map	*map;
+	mlx_t		*mlx;
+	mlx_image_t	*img;
+	void		*win;
+	t_map		*map;
 }			t_FdF_info;
 
 /*----STORE----*/
@@ -60,9 +60,5 @@ void		free_map(t_map *map);
 void		free_struct(t_FdF_info *fdf);
 int			calc_len(char *s);
 t_bool		init(int argc, char **argv, t_FdF_info **fdf_info);
-
-/*----MAP----*/
-void		put_pixel(t_img *img, int pos_x, int pos_y, int color);
-void		new_img(int size_x, int size_y, t_img **img);
 
 #endif
