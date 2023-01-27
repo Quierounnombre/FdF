@@ -6,7 +6,7 @@
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/25 16:05:24 by vicgarci          #+#    #+#             */
-/*   Updated: 2023/01/26 20:47:59 by vicgarci         ###   ########.fr       */
+/*   Updated: 2023/01/27 19:26:25 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ t_bool	init(int argc, char **argv, t_FdF_info **fdf)
 			if (store_file(fd, (*fdf)->map))
 			{
 				set_mlx();
+				close(fd);
 				(*fdf)->mlx = mlx_init(X_SIZE, Y_SIZE, NAME, false);
 				if ((*fdf)->mlx)
 					return (true);
