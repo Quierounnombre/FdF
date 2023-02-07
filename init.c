@@ -6,7 +6,7 @@
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/25 16:05:24 by vicgarci          #+#    #+#             */
-/*   Updated: 2023/02/07 17:07:47 by vicgarci         ###   ########.fr       */
+/*   Updated: 2023/02/07 17:54:44 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ static void	set_mlx(void)
 {
 	mlx_set_setting(MLX_STRETCH_IMAGE, false);
 	mlx_set_setting(MLX_FULLSCREEN, false);
-	mlx_set_setting(MLX_MAXIMIZED, false);
+	mlx_set_setting(MLX_MAXIMIZED, true);
 	mlx_set_setting(MLX_DECORATED, true);
 	mlx_set_setting(MLX_HEADLESS, false);
 }

@@ -3,3 +3,6 @@
 
 #Build Libraries
 *.a
+
+#FdF file
+FdF
