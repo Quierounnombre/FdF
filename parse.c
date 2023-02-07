@@ -6,7 +6,7 @@
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 14:38:50 by vicgarci          #+#    #+#             */
-/*   Updated: 2023/01/26 20:29:52 by vicgarci         ###   ########.fr       */
+/*   Updated: 2023/02/07 13:43:06 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 static void	parse_log(int argc, const char c);
 
-int	parse(int argc, char **argv)
+t_bool	parse(int argc, char **argv)
 {
 	size_t	i;
 
 	i = 0;
 	if (argc != MAX_ARGS)
 	{
-		parse_log(argc, argv[1][i]);
+		parse_log(argc, argv[0][i]);
 		return (false);
 	}
 	while (true)
