@@ -6,7 +6,7 @@
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/25 16:05:24 by vicgarci          #+#    #+#             */
-/*   Updated: 2023/02/07 17:54:44 by vicgarci         ###   ########.fr       */
+/*   Updated: 2023/02/07 20:48:44 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,12 @@ static t_bool	ft_mlx_start(t_FdF_info **fdf)
 	if ((*fdf)->mlx)
 	{
 		(*fdf)->img = mlx_new_image((*fdf)->mlx, WIDTH, HEIGHT);
-		if ((*fdf)->img
-			|| (mlx_image_to_window((*fdf)->mlx, (*fdf)->img, 0, 0) > 0))
-			return (true);
+		if ((*fdf)->img)
+		{
+			ft_memset((*fdf)->img->pixels, 0, HEIGHT * WIDTH * sizeof(int32_t));
+			if (!(mlx_image_to_window((*fdf)->mlx, (*fdf)->img, 0, 0) > 0))
+				return (true);
+		}
 	}
 	return (false);
 }
