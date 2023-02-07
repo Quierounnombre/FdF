@@ -1,42 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   store_file.c                                       :+:      :+:    :+:   */
+/*   close_fdf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/17 16:02:35 by vicgarci          #+#    #+#             */
-/*   Updated: 2023/02/07 17:17:29 by vicgarci         ###   ########.fr       */
+/*   Created: 2023/02/07 16:39:52 by vicgarci          #+#    #+#             */
+/*   Updated: 2023/02/07 17:21:16 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FdF.h"
 
-t_bool	store_file(int fd, t_map *map)
+void	close_fdf(void *param)
 {
-	char	*s;
-	size_t	len;
-	int		line;
+	t_FdF_info	*fdf;
 
-	s = "Hola";
-	len = 0;
-	line = 0;
-	while (s)
-	{
-		s = ft_get_next_line(fd);
-		if (s)
-		{
-			if (store_line(s, map, line))
-				line++;
-			else
-			{
-				free(s);
-				return (false);
-			}
-			free(s);
-		}
-	}
-	ft_printf("\n-------------------\n ARCHIVO ALMACENADO\n-------------------\n");
-	close (fd);
-	return (true);
+	ft_printf("HAY\n");
+	fdf = param;
+	mlx_close_window(fdf->mlx);
+	free_struct(fdf);
+	ft_printf("HAY\n");
 }

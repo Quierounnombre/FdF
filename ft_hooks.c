@@ -1,42 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   store_file.c                                       :+:      :+:    :+:   */
+/*   ft_hooks.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/17 16:02:35 by vicgarci          #+#    #+#             */
-/*   Updated: 2023/02/07 17:17:29 by vicgarci         ###   ########.fr       */
+/*   Created: 2023/02/07 16:20:39 by vicgarci          #+#    #+#             */
+/*   Updated: 2023/02/07 17:19:20 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FdF.h"
 
-t_bool	store_file(int fd, t_map *map)
+void	hook(void	*param)
 {
-	char	*s;
-	size_t	len;
-	int		line;
+	t_FdF_info	*fdf;
 
-	s = "Hola";
-	len = 0;
-	line = 0;
-	while (s)
+	fdf = param;
+	if (mlx_is_key_down(fdf->mlx, MLX_KEY_ESCAPE))
 	{
-		s = ft_get_next_line(fd);
-		if (s)
-		{
-			if (store_line(s, map, line))
-				line++;
-			else
-			{
-				free(s);
-				return (false);
-			}
-			free(s);
-		}
+		ft_printf("HEY\n");
+		close_fdf(fdf);
+		ft_printf("HEY\n");
 	}
-	ft_printf("\n-------------------\n ARCHIVO ALMACENADO\n-------------------\n");
-	close (fd);
-	return (true);
 }
+
+void	ft_hooks(t_FdF_info *fdf)
+{
+	mlx_loop_hook(fdf->mlx, hook, fdf);
+	mlx_close_hook(fdf->mlx, close_fdf, fdf);
+}
+
