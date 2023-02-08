@@ -6,7 +6,7 @@
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 13:49:10 by vicgarci          #+#    #+#             */
-/*   Updated: 2023/02/08 17:17:48 by vicgarci         ###   ########.fr       */
+/*   Updated: 2023/02/08 18:26:08 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ static void	draw_dots(float x_dim, float y_dim, t_FdF_info *fdf)
 		{
 			mlx_put_pixel(fdf->img, x_pos, y_pos, 0xFF0000FF);
 			i++;
-			x_pos = (x_dim) + (x_dim * i);
+			x_pos = ((x_dim) + (x_dim * i));
 		}
 		j++;
 		y_pos = (y_dim) + (y_dim * j);
@@ -60,7 +60,5 @@ void	draw(t_FdF_info *fdf)
 
 	x_dimension = set_dimensions(fdf->map->map_size_x, WIDTH);
 	y_dimension = set_dimensions(fdf->map->map_size_y, HEIGHT);
-	printf("\nx dim == %f\n", x_dimension);
-	printf("\ny dim == %f\n", y_dimension);
 	draw_dots(x_dimension, y_dimension, fdf);
 }

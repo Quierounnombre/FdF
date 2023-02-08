@@ -6,7 +6,7 @@
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/25 16:05:24 by vicgarci          #+#    #+#             */
-/*   Updated: 2023/02/07 20:48:44 by vicgarci         ###   ########.fr       */
+/*   Updated: 2023/02/08 17:58:34 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,25 @@ static void	set_mlx(void)
 	mlx_set_setting(MLX_HEADLESS, false);
 }
 
+static void	set_dark(t_FdF_info *fdf)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	j = 0;
+	while (j != HEIGHT)
+	{
+		while (i != WIDTH)
+		{
+			mlx_put_pixel(fdf->img, i, j, 0x000000FF);
+			i++;
+		}
+		i = 0;
+		j++;
+	}
+}
+
 static t_bool	ft_mlx_start(t_FdF_info **fdf)
 {
 	set_mlx();
@@ -30,7 +49,7 @@ static t_bool	ft_mlx_start(t_FdF_info **fdf)
 		(*fdf)->img = mlx_new_image((*fdf)->mlx, WIDTH, HEIGHT);
 		if ((*fdf)->img)
 		{
-			ft_memset((*fdf)->img->pixels, 0, HEIGHT * WIDTH * sizeof(int32_t));
+			set_dark((*fdf));
 			if (!(mlx_image_to_window((*fdf)->mlx, (*fdf)->img, 0, 0) > 0))
 				return (true);
 		}
