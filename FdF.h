@@ -6,7 +6,7 @@
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 14:30:33 by vicgarci          #+#    #+#             */
-/*   Updated: 2023/02/08 14:00:07 by vicgarci         ###   ########.fr       */
+/*   Updated: 2023/02/08 16:19:26 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include "libft_def/libftprintf.h"
 # include "MLX42/include/MLX42/MLX42.h"
+# include <math.h>
 
 # ifndef WIDTH
 #  define WIDTH 1000
