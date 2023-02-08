@@ -6,7 +6,7 @@
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 14:30:33 by vicgarci          #+#    #+#             */
-/*   Updated: 2023/02/07 17:54:08 by vicgarci         ###   ########.fr       */
+/*   Updated: 2023/02/08 14:00:07 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,5 +68,8 @@ void			ft_hooks(t_FdF_info *fdf);
 
 /*----CLOSE----*/
 void			close_fdf(void *fdf);
+
+/*----DRAW----*/
+void			draw(t_FdF_info	*fdf);
 
 #endif

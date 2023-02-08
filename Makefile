@@ -6,7 +6,7 @@
 #    By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/17 14:56:53 by vicgarci          #+#    #+#              #
-#    Updated: 2023/02/07 16:41:49 by vicgarci         ###   ########.fr        #
+#    Updated: 2023/02/08 13:48:55 by vicgarci         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,7 +29,8 @@ FILES = main.c \
 		calc_len.c \
 		init.c \
 		ft_hooks.c \
-		close_fdf.c
+		close_fdf.c \
+		draw.c
 
 OBJS = ${FILES:.c=.o}
 
