@@ -6,7 +6,7 @@
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 13:49:10 by vicgarci          #+#    #+#             */
-/*   Updated: 2023/02/08 14:18:32 by vicgarci         ###   ########.fr       */
+/*   Updated: 2023/02/08 14:54:04 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ static void	draw_dots(int x_dim, int y_dim, t_FdF_info *fdf)
 			x_pos = (x_dim) + (x_dim * i);
 		}
 		y_pos = (y_dim) + (y_dim * j);
+		x_pos = x_dim;
 		i = 0;
 		j++;
 	}
