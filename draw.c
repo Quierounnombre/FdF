@@ -6,7 +6,7 @@
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 13:49:10 by vicgarci          #+#    #+#             */
-/*   Updated: 2023/02/09 14:48:29 by vicgarci         ###   ########.fr       */
+/*   Updated: 2023/02/09 17:37:01 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,30 +25,26 @@ static float	set_dimensions(int n_dots, int dimension)
 //ex: a line of len 5 need, 6 cuts, a "." is a dot and a "-" a cut
 // -.-.-.-.-.- this is how is should be represented
 
-static void	draw_dots(float x_dim, float y_dim, t_FdF_info *fdf)
+static void	draw_dots(t_FdF_info *fdf)
 {
-	int		i;
-	int		j;
-	float	x_pos;
-	float	y_pos;
-	t_map	*map;
+	int			i;
+	int			j;
+	t_map		*map;
+	t_vector2D	v;
 
 	i = 0;
 	j = 0;
-	x_pos = x_dim;
 	map = fdf->map;
-	y_pos = y_dim + map->map[j][i].pixel;
 	while (j < map->map_size_y - 1)
 	{
 		while (i < map->map_size_x)
 		{
-			mlx_put_pixel(fdf->img, x_pos, y_pos, 0xFF0000FF);
+			v = get_iso_perspective(i, j, map->map[i][j].pixel);
+			printf("Vector x: %f y: %f\n", v.x, v.y);
+			mlx_put_pixel(fdf->img, v.x, v.y, 0xFF0000FF);
 			i++;
-			x_pos = ((x_dim) + (x_dim * i));
-			y_pos = y_dim + map->map[j][i].pixel;
 		}
 		j++;
-		x_pos = x_dim;
 		i = 0;
 	}
 }
@@ -60,5 +56,5 @@ void	draw(t_FdF_info *fdf)
 
 	x_dimension = set_dimensions(fdf->map->map_size_x, WIDTH);
 	y_dimension = set_dimensions(fdf->map->map_size_y, HEIGHT);
-	draw_dots(x_dimension, y_dimension, fdf);
+	draw_dots(fdf);
 }
