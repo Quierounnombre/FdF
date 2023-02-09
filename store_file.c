@@ -6,7 +6,7 @@
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 16:02:35 by vicgarci          #+#    #+#             */
-/*   Updated: 2023/02/08 15:24:10 by vicgarci         ###   ########.fr       */
+/*   Updated: 2023/02/09 14:46:38 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,9 @@
 t_bool	store_file(int fd, t_map *map)
 {
 	char	*s;
-	size_t	len;
 	int		line;
 
 	s = "Hola";
-	len = 0;
 	line = 0;
 	while (s)
 	{
@@ -34,6 +32,7 @@ t_bool	store_file(int fd, t_map *map)
 				return (false);
 			}
 			free(s);
+			ft_printf("\nLinea %d almacenada\n", line);
 		}
 	}
 	ft_printf("\n-------------------\n ARCHIVO ALMACENADO\n-------------------\n");

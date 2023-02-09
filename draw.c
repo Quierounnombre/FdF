@@ -6,7 +6,7 @@
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 13:49:10 by vicgarci          #+#    #+#             */
-/*   Updated: 2023/02/08 18:26:08 by vicgarci         ###   ########.fr       */
+/*   Updated: 2023/02/09 14:48:29 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,18 +36,18 @@ static void	draw_dots(float x_dim, float y_dim, t_FdF_info *fdf)
 	i = 0;
 	j = 0;
 	x_pos = x_dim;
-	y_pos = y_dim;
 	map = fdf->map;
-	while (j != map->map_size_y)
+	y_pos = y_dim + map->map[j][i].pixel;
+	while (j < map->map_size_y - 1)
 	{
-		while (i != map->map_size_x)
+		while (i < map->map_size_x)
 		{
 			mlx_put_pixel(fdf->img, x_pos, y_pos, 0xFF0000FF);
 			i++;
 			x_pos = ((x_dim) + (x_dim * i));
+			y_pos = y_dim + map->map[j][i].pixel;
 		}
 		j++;
-		y_pos = (y_dim) + (y_dim * j);
 		x_pos = x_dim;
 		i = 0;
 	}
