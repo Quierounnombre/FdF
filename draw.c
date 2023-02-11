@@ -6,7 +6,7 @@
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 13:49:10 by vicgarci          #+#    #+#             */
-/*   Updated: 2023/02/09 18:11:01 by vicgarci         ###   ########.fr       */
+/*   Updated: 2023/02/11 14:36:56 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,9 +40,9 @@ static void	draw_dots(t_FdF_info *fdf)
 	{
 		while (i < map->map_size_x)
 		{
-			v = get_iso_perspective(i, j, map->map[j][i].pixel);
+			v = get_iso_perspective(i, j, -map->map[j][i].pixel);
 			printf("Vector x: %f y: %f\n", v.x, v.y);
-			mlx_put_pixel(fdf->img, v.x, v.y, 0xFF0000FF);
+			mlx_put_pixel(fdf->img, WIDTH / 2 + v.x, HEIGHT / 2 + v.y, 0xFF0000FF);
 			i++;
 		}
 		j++;
