@@ -6,11 +6,27 @@
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 14:59:40 by vicgarci          #+#    #+#             */
-/*   Updated: 2023/02/11 14:32:03 by vicgarci         ###   ########.fr       */
+/*   Updated: 2023/02/11 17:53:48 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FdF.h"
+
+static t_vector3D	set_dimensions(t_map *map)
+{
+	t_vector3D	result;
+	int			cut_correct;
+
+	cut_correct = map->map_size_x;
+	result.x = (float)(WIDTH) / (float)(2 * (map->map_size_x + cut_correct));
+	result.y = (float)(HEIGHT) / (float)(2 * (map->map_size_y + cut_correct));
+	result.z = 10;
+	return (result);
+}
+
+//The cut correction, solve the amount of cuts needed to represent a line
+//ex: a line of len 5 need, 6 cuts, a "." is a dot and a "-" a cut
+// -.-.-.-.-.- this is how is should be represented
 
 static void	load_vectors(t_vector2D *v_0, t_vector2D *v_120, t_vector2D *v_240)
 {
@@ -23,18 +39,25 @@ static void	load_vectors(t_vector2D *v_0, t_vector2D *v_120, t_vector2D *v_240)
 	v_240->x = cos(240);
 	v_240->y = sin(240);
 	printf("V_240 x: %f y: %f\n", v_240->x, v_240->y);
+	printf("--------------------\nAngulo iso terminado\n--------------------\n");
 }
 
-t_vector2D	get_iso_perspective(int i, int j, int k)
+t_vector2D	get_iso_perspective(t_vector3D v3, t_map *map)
 {
 	static t_vector2D	v_0;
 	static t_vector2D	v_120;
 	static t_vector2D	v_240;
+	static t_vector3D	dim;
 	t_vector2D			v_r;
 
 	if (v_0.x != 1)
+	{
+		dim = set_dimensions(map);
 		load_vectors(&v_0, &v_120, &v_240);
-	v_r.x = (v_0.x * i) + (v_120.x * j) + (v_240.x * k);
-	v_r.y = (v_0.y * i) + (v_120.y * j) + (v_240.y * k);
+	}
+	v_r.x = (v_0.x * v3.x * dim.x) + (v_120.x * v3.y * dim.y)
+		+ (v_240.x * v3.z * dim.z);
+	v_r.y = (v_0.y * v3.x * dim.x) + (v_120.y * v3.y * dim.y)
+		+ (v_240.y * v3.z * dim.z);
 	return (v_r);
 }

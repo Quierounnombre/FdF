@@ -6,7 +6,7 @@
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 16:20:39 by vicgarci          #+#    #+#             */
-/*   Updated: 2023/02/07 20:44:34 by vicgarci         ###   ########.fr       */
+/*   Updated: 2023/02/11 16:22:10 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,4 +26,3 @@ void	ft_hooks(t_FdF_info *fdf)
 	mlx_loop_hook(fdf->mlx, key_hook, fdf);
 	mlx_close_hook(fdf->mlx, close_fdf, fdf);
 }
-
