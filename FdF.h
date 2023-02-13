@@ -6,7 +6,7 @@
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 14:30:33 by vicgarci          #+#    #+#             */
-/*   Updated: 2023/02/11 17:47:46 by vicgarci         ###   ########.fr       */
+/*   Updated: 2023/02/13 16:29:52 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,19 +52,6 @@ typedef struct s_FdF_info
 	t_map		*map;
 }			t_FdF_info;
 
-typedef struct s_vector2D
-{
-	float		x;
-	float		y;
-}				t_vector2D;
-
-typedef struct s_vector3D
-{
-	float		x;
-	float		y;
-	float		z;
-}				t_vector3D;
-
 /*----STORE----*/
 
 t_bool			store_file(int fd, t_map *map);
@@ -85,6 +72,7 @@ void			close_fdf(void *fdf);
 
 /*----DRAW----*/
 void			draw(t_FdF_info	*fdf);
+void			draw_lines(t_FdF_info *fdf, int i, int j, t_vector2D v);
 t_vector2D		get_iso_perspective(t_vector3D v3, t_map *map);
 
 #endif
