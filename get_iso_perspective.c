@@ -6,7 +6,7 @@
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 14:59:40 by vicgarci          #+#    #+#             */
-/*   Updated: 2023/02/13 17:35:04 by vicgarci         ###   ########.fr       */
+/*   Updated: 2023/02/13 18:54:44 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ static t_vector3D	set_dimensions(t_map *map)
 	cut_correct = map->map_size_x + 1;
 	result.x = (float)(WIDTH) / (float)(1 * (map->map_size_x + cut_correct));
 	result.y = (float)(HEIGHT) / (float)(1 * (map->map_size_y + cut_correct));
-	result.z = 5;
+	result.z = 1;
 	return (result);
 }
 //The cut correction, solve the amount of cuts needed to represent a line

@@ -6,7 +6,7 @@
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 16:41:34 by vicgarci          #+#    #+#             */
-/*   Updated: 2023/02/13 18:35:38 by vicgarci         ###   ########.fr       */
+/*   Updated: 2023/02/13 18:53:28 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,8 @@ static void	draw_line(t_FdF_info *fdf, t_vector3D v3, t_vector2D v_init)
 	{
 		mlx_put_pixel(fdf->img, v_init.x + x_offset,
 			HEIGHT / 3 + v_init.y + y_offset, 0x00FF00FF);
-		//x_offset += x_offset;
-		//y_offset += y_offset;
+		v_init.x += x_offset;
+		v_init.y += y_offset;
 		n_dots--;
 	}
 }
