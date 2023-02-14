@@ -6,7 +6,7 @@
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/25 16:05:24 by vicgarci          #+#    #+#             */
-/*   Updated: 2023/02/11 15:54:24 by vicgarci         ###   ########.fr       */
+/*   Updated: 2023/02/14 17:11:35 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,9 +68,10 @@ t_bool	init(int argc, char **argv, t_FdF_info **fdf)
 		if (fd >= 0)
 		{
 			*fdf = init_struct();
-			if (store_file(fd, (*fdf)->map))
+			if (fdf && store_file(fd, (*fdf)->map))
 			{
 				close(fd);
+				(*fdf)->cam->dim = set_dimensions((*fdf)->map);
 				if (ft_mlx_start(fdf))
 					return (true);
 			}

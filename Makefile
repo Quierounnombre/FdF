@@ -6,7 +6,7 @@
 #    By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/17 14:56:53 by vicgarci          #+#    #+#              #
-#    Updated: 2023/02/13 18:22:27 by vicgarci         ###   ########.fr        #
+#    Updated: 2023/02/14 14:47:40 by vicgarci         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,7 +32,9 @@ FILES = main.c \
 		close_fdf.c \
 		draw.c \
 		get_iso_perspective.c \
-		draw_lines.c
+		draw_lines.c \
+		set_dimensions.c \
+		load_angles.c
 
 OBJS = ${FILES:.c=.o}
 

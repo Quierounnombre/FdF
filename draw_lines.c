@@ -6,7 +6,7 @@
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 16:41:34 by vicgarci          #+#    #+#             */
-/*   Updated: 2023/02/13 18:53:28 by vicgarci         ###   ########.fr       */
+/*   Updated: 2023/02/14 15:37:25 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static void	draw_line(t_FdF_info *fdf, t_vector3D v3, t_vector2D v_init)
 	float		y_offset;
 	float		n_dots;
 
-	v_end = get_iso_perspective(v3, fdf->map);
+	v_end = get_iso_perspective(v3, fdf);
 	x_offset = v_end.x - v_init.x;
 	y_offset = v_end.y - v_init.y;
 	n_dots = sqrt(pow(x_offset, 2) + pow(y_offset, 2));
@@ -27,8 +27,8 @@ static void	draw_line(t_FdF_info *fdf, t_vector3D v3, t_vector2D v_init)
 	y_offset /= n_dots;
 	while (n_dots > 0)
 	{
-		mlx_put_pixel(fdf->img, v_init.x + x_offset,
-			HEIGHT / 3 + v_init.y + y_offset, 0x00FF00FF);
+		mlx_put_pixel(fdf->img, WIDTH / 6 + v_init.x + x_offset,
+			HEIGHT / 2 + v_init.y + y_offset, 0x00FF00FF);
 		v_init.x += x_offset;
 		v_init.y += y_offset;
 		n_dots--;

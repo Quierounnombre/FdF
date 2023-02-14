@@ -6,7 +6,7 @@
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 14:30:33 by vicgarci          #+#    #+#             */
-/*   Updated: 2023/02/13 16:29:52 by vicgarci         ###   ########.fr       */
+/*   Updated: 2023/02/14 14:44:14 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,12 +44,34 @@ typedef struct s_map
 	int		map_size_y;
 }			t_map;
 
+typedef struct s_angle
+{
+	float	alpha;
+	float	beta;
+	float	gamma;
+}				t_angle;
+
+typedef struct s_dir_vectors
+{
+	t_vector2D	v_alpha;
+	t_vector2D	v_beta;
+	t_vector2D	v_gamma;
+}					t_dir_vectors;
+
+typedef struct s_cam
+{
+	t_angle			*ang;
+	t_vector3D		dim;
+	t_dir_vectors	*dir_vec;
+}				t_cam;
+
 typedef struct s_FdF_info
 {
 	mlx_t		*mlx;
 	mlx_image_t	*img;
 	void		*win;
 	t_map		*map;
+	t_cam		*cam;
 }			t_FdF_info;
 
 /*----STORE----*/
@@ -73,6 +95,9 @@ void			close_fdf(void *fdf);
 /*----DRAW----*/
 void			draw(t_FdF_info	*fdf);
 void			draw_lines(t_FdF_info *fdf, int i, int j, t_vector2D v);
-t_vector2D		get_iso_perspective(t_vector3D v3, t_map *map);
+t_vector2D		get_iso_perspective(t_vector3D v3, t_FdF_info *fdf);
 
+/*-----CAM-----*/
+t_vector3D		set_dimensions(t_map *map);
+void			load_angles(t_angle *ang, t_dir_vectors *v);
 #endif
