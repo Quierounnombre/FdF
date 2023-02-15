@@ -6,7 +6,7 @@
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/20 18:14:49 by vicgarci          #+#    #+#             */
-/*   Updated: 2023/02/08 15:24:02 by vicgarci         ###   ########.fr       */
+/*   Updated: 2023/02/15 17:07:42 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,8 @@ static void	store_pixel(int *i, int line, t_map *map, char **s)
 	{
 		(*s) += 3;
 		map->map[line][*i].color = ft_atoi_base((*s), "0123456789ABCDEF");
-		(*s) += 6;
+		while (!ft_isspace((**s)))
+			(*s)++;
 	}
 	else
 		map->map[line][*i].color = 255;

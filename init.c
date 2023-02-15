@@ -6,7 +6,7 @@
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/25 16:05:24 by vicgarci          #+#    #+#             */
-/*   Updated: 2023/02/15 15:55:53 by vicgarci         ###   ########.fr       */
+/*   Updated: 2023/02/15 17:23:01 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ t_bool	init(int argc, char **argv, t_FdF_info **fdf)
 {
 	int	fd;
 
-	ft_printf("ALMACENANDO EL MAPA\n");
+	ft_printf("ALMACENANDO EL MAPA\n\n");
 	if (parse(argc, argv))
 	{
 		fd = open(argv[1], O_RDONLY);
