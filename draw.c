@@ -6,7 +6,7 @@
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 13:49:10 by vicgarci          #+#    #+#             */
-/*   Updated: 2023/02/14 17:12:18 by vicgarci         ###   ########.fr       */
+/*   Updated: 2023/02/15 16:03:30 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,7 @@ static t_vector2D	draw_dot(t_FdF_info *fdf, int i, int j)
 	map = fdf->map;
 	v3 = load_vector3d(i, j, -map->map[j][i].pixel);
 	v = get_iso_perspective(v3, fdf);
-	printf("Vect2D: %f | %f\n", v.x, v.y);
-	mlx_put_pixel(fdf->img, WIDTH / 6 + v.x, HEIGHT / 2 + v.y, 0xFF0000FF);
+	mlx_put_pixel(fdf->img, v.x, v.y, 0xFF0000FF);
 	return (v);
 }
 
