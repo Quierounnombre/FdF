@@ -1,0 +1,8 @@
+-Cliping del mars
+-Colores y algoritmo de cambio de color
+-Problemas con la escala
+-Mejorar para recibir hexas en minusculas?
+-Centrar el mapa y margenes
+-Hooks para la camara
+-Cambiar el tamaño de la pantalla
+-Zoom

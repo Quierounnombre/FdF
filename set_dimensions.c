@@ -6,7 +6,7 @@
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 13:26:32 by vicgarci          #+#    #+#             */
-/*   Updated: 2023/02/15 16:42:58 by vicgarci         ###   ########.fr       */
+/*   Updated: 2023/02/15 18:03:26 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ t_vector3D	set_dimensions(t_map *map)
 	printf("Map %d | %d\n", map->map_size_x, map->map_size_y);
 	result.x = (float)(WIDTH) / (float)(map->map_size_x + cut_correct);
 	result.y = (float)(HEIGHT) / (float)(map->map_size_y + cut_correct);
-	result.z = 1;
+	result.z = 3;
 	printf("Dimensión de x: %f\n", result.x);
 	printf("Dimensión de y: %f\n", result.y);
 	printf("Dimensión de z: %f\n", result.z);
