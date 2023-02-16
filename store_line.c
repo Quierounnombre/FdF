@@ -6,7 +6,7 @@
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/20 18:14:49 by vicgarci          #+#    #+#             */
-/*   Updated: 2023/02/16 14:24:06 by vicgarci         ###   ########.fr       */
+/*   Updated: 2023/02/16 18:04:41 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,11 +49,11 @@ static void	store_pixel(int *i, int line, t_map *map, char **s)
 	{
 		(*s) += 3;
 		map->map[line][*i].color = ft_atoi_base((*s), "0123456789ABCDEF");
-		while (!ft_isspace((**s)))
-			(*s)++;
+		(*s) += 6;
+		ft_printf("Almaceno\n");
 	}
 	else
-		map->map[line][*i].color = 0xFF00FF;
+		map->map[line][*i].color = 0xFFFF00;
 	(*i)++;
 }
 

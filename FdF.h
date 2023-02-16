@@ -6,7 +6,7 @@
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 14:30:33 by vicgarci          #+#    #+#             */
-/*   Updated: 2023/02/15 16:52:36 by vicgarci         ###   ########.fr       */
+/*   Updated: 2023/02/16 17:36:39 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,8 @@
 
 typedef struct s_pixel
 {
-	int	pixel;
-	int	color;
+	int			pixel;
+	uint32_t	color;
 }			t_pixel;
 
 typedef struct s_map
@@ -90,14 +90,18 @@ t_bool			init(int argc, char **argv, t_FdF_info **fdf_info);
 void			ft_hooks(t_FdF_info *fdf);
 
 /*----CLOSE----*/
+
 void			close_fdf(void *fdf);
 
 /*----DRAW----*/
+
 void			draw(t_FdF_info	*fdf);
 void			draw_lines(t_FdF_info *fdf, int i, int j, t_vector2D v);
 t_vector2D		get_iso_perspective(t_vector3D v3, t_FdF_info *fdf);
 
 /*-----CAM-----*/
+
 t_vector3D		set_dimensions(t_map *map);
 void			load_angles(t_angle *ang, t_dir_vectors *v);
+
 #endif

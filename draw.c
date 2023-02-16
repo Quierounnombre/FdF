@@ -6,7 +6,7 @@
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 13:49:10 by vicgarci          #+#    #+#             */
-/*   Updated: 2023/02/16 14:21:28 by vicgarci         ###   ########.fr       */
+/*   Updated: 2023/02/16 17:41:24 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,6 @@ static void	draw_dots(t_FdF_info *fdf)
 	i = 0;
 	j = 0;
 	map = fdf->map;
-	ft_printf("MAP x: %d, y: %d\n", map->map_size_x, map->map_size_y);
 	while (j < map->map_size_y - 1)
 	{
 		while (i < map->map_size_x)
