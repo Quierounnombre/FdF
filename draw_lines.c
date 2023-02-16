@@ -6,13 +6,14 @@
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 16:41:34 by vicgarci          #+#    #+#             */
-/*   Updated: 2023/02/15 16:00:49 by vicgarci         ###   ########.fr       */
+/*   Updated: 2023/02/16 14:23:43 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FdF.h"
 
-static void	draw_line(t_FdF_info *fdf, t_vector3D v3, t_vector2D v_init)
+static void	draw_line(t_FdF_info *fdf, t_vector3D v3, t_vector2D v_init, 
+				int color)
 {
 	t_vector2D	v_end;
 	float		x_offset;
@@ -27,7 +28,7 @@ static void	draw_line(t_FdF_info *fdf, t_vector3D v3, t_vector2D v_init)
 	y_offset /= n_dots;
 	while (n_dots > 0)
 	{
-		mlx_put_pixel(fdf->img, v_init.x, v_init.y, 0x00FF00FF);
+		mlx_put_pixel(fdf->img, v_init.x, v_init.y, color);
 		v_init.x += x_offset;
 		v_init.y += y_offset;
 		n_dots--;
@@ -40,7 +41,9 @@ void	draw_lines(t_FdF_info *fdf, int i, int j, t_vector2D v)
 
 	map = fdf->map;
 	if ((map->map_size_y - 1) > (j + 1))
-		draw_line(fdf, load_vector3d(i, j + 1, -map->map[j + 1][i].pixel), v);
+		draw_line(fdf, load_vector3d(i, j + 1, -map->map[j + 1][i].pixel), v,
+			map->map[j + 1][i].color);
 	if (map->map_size_x > (i + 1))
-		draw_line(fdf, load_vector3d(i + 1, j, -map->map[j][i + 1].pixel), v);
+		draw_line(fdf, load_vector3d(i + 1, j, -map->map[j][i + 1].pixel), v,
+			map->map[j][i + 1].color);
 }
