@@ -1,8 +1,9 @@
--Cliping del mars
--Colores y algoritmo de cambio de color
--Problemas con la escala
+-Cliping del mars : OK
+-Colores y algoritmo de cambio de color : REDO
+-Problemas con la escala : OK
+-Orientacion
 -Mejorar para recibir hexas en minusculas?
 -Centrar el mapa y margenes
 -Hooks para la camara
--Cambiar el tamaño de la pantalla
+-Cambiar el tamaño de la pantalla : OK
 -Zoom
