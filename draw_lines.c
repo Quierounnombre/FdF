@@ -6,7 +6,7 @@
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 16:41:34 by vicgarci          #+#    #+#             */
-/*   Updated: 2023/02/20 15:20:53 by vicgarci         ###   ########.fr       */
+/*   Updated: 2023/02/20 17:36:56 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,9 +43,9 @@ void	draw_lines(t_FdF_info *fdf, int i, int j, t_vector2D v)
 
 	map = fdf->map;
 	if ((map->map_size_y - 1) > (j + 1))
-		draw_line(fdf, load_vector3d(i, j + 1, -map->map[j + 1][i].pixel), v,
+		draw_line(fdf, load_vector3d(i, j + 1, map->map[j + 1][i].pixel), v,
 			map->map[j][i].color);
 	if (map->map_size_x > (i + 1))
-		draw_line(fdf, load_vector3d(i + 1, j, -map->map[j][i + 1].pixel), v,
+		draw_line(fdf, load_vector3d(i + 1, j, map->map[j][i + 1].pixel), v,
 			map->map[j][i].color);
 }
