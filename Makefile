@@ -6,7 +6,7 @@
 #    By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/17 14:56:53 by vicgarci          #+#    #+#              #
-#    Updated: 2023/02/14 14:47:40 by vicgarci         ###   ########.fr        #
+#    Updated: 2023/02/21 18:05:49 by vicgarci         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,22 +19,22 @@ CFLAGS = -Wall -Wextra -Werror #-fsanitize=address -g3
 MLXFLAGS = -lglfw -L "/Users/vicgarci/.brew/opt/glfw/lib/" -D DEBUG=1
 RM = rm -f
 
-FILES = main.c \
-		parse.c \
-		store_file.c \
-		init_struct.c \
-		store_line.c \
-		free_map.c \
-		free_struct.c \
-		calc_len.c \
-		init.c \
-		ft_hooks.c \
-		close_fdf.c \
-		draw.c \
-		get_iso_perspective.c \
-		draw_lines.c \
-		set_dimensions.c \
-		load_angles.c
+FILES = src/main.c \
+		src/parse.c \
+		src/store_file.c \
+		src/init_struct.c \
+		src/store_line.c \
+		src/free_map.c \
+		src/free_struct.c \
+		src/calc_len.c \
+		src/init.c \
+		src/ft_hooks.c \
+		src/close_fdf.c \
+		src/draw.c \
+		src/get_iso_perspective.c \
+		src/draw_lines.c \
+		src/set_dimensions.c \
+		src/load_angles.c
 
 OBJS = ${FILES:.c=.o}
 

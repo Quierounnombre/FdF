@@ -6,15 +6,15 @@
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 14:30:33 by vicgarci          #+#    #+#             */
-/*   Updated: 2023/02/20 15:22:19 by vicgarci         ###   ########.fr       */
+/*   Updated: 2023/02/21 18:02:38 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FDF_H
 # define FDF_H
 
-# include "libft_def/libftprintf.h"
-# include "MLX42/include/MLX42/MLX42.h"
+# include "../libft_def/libftprintf.h"
+# include "../MLX42/include/MLX42/MLX42.h"
 # include <math.h>
 
 # ifndef WIDTH
