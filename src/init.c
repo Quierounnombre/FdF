@@ -6,7 +6,7 @@
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/25 16:05:24 by vicgarci          #+#    #+#             */
-/*   Updated: 2023/02/15 17:23:01 by vicgarci         ###   ########.fr       */
+/*   Updated: 2023/02/22 18:30:44 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,25 +19,6 @@ static void	set_mlx(void)
 	mlx_set_setting(MLX_MAXIMIZED, true);
 	mlx_set_setting(MLX_DECORATED, true);
 	mlx_set_setting(MLX_HEADLESS, false);
-}
-
-static void	set_dark(t_FdF_info *fdf)
-{
-	int	i;
-	int	j;
-
-	i = 0;
-	j = 0;
-	while (j != HEIGHT)
-	{
-		while (i != WIDTH)
-		{
-			mlx_put_pixel(fdf->img, i, j, 0x000000FF);
-			i++;
-		}
-		i = 0;
-		j++;
-	}
 }
 
 static t_bool	ft_mlx_start(t_FdF_info **fdf)

@@ -6,7 +6,7 @@
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 14:30:33 by vicgarci          #+#    #+#             */
-/*   Updated: 2023/02/21 18:02:38 by vicgarci         ###   ########.fr       */
+/*   Updated: 2023/02/22 18:51:42 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 # include "../libft_def/libftprintf.h"
 # include "../MLX42/include/MLX42/MLX42.h"
-# include <math.h>
 
 # ifndef WIDTH
 #  define WIDTH 1000
@@ -63,6 +62,7 @@ typedef struct s_cam
 	t_angle			*ang;
 	t_vector3D		dim;
 	t_dir_vectors	*dir_vec;
+	t_vector2D		pos;
 }				t_cam;
 
 typedef struct s_FdF_info
@@ -98,10 +98,19 @@ void			close_fdf(void *fdf);
 void			draw(t_FdF_info	*fdf);
 void			draw_lines(t_FdF_info *fdf, int i, int j, t_vector2D v);
 t_vector2D		get_iso_perspective(t_vector3D v3, t_FdF_info *fdf);
+void			set_dark(t_FdF_info *fdf);
 
 /*-----CAM-----*/
 
 t_vector3D		set_dimensions(t_map *map);
 void			load_angles(t_angle *ang, t_dir_vectors *v);
+
+/*-----HOOKS-----*/
+
+void			a_hook(t_FdF_info *fdf);
+void			d_hook(t_FdF_info *fdf);
+void			w_hook(t_FdF_info *fdf);
+void			s_hook(t_FdF_info *fdf);
+void			z_hook(t_FdF_info *fdf);
 
 #endif

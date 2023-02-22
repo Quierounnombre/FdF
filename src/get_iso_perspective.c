@@ -6,7 +6,7 @@
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 14:59:40 by vicgarci          #+#    #+#             */
-/*   Updated: 2023/02/22 18:02:20 by vicgarci         ###   ########.fr       */
+/*   Updated: 2023/02/22 18:28:20 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,10 +38,12 @@ t_vector2D	get_iso_perspective(t_vector3D v3, t_FdF_info *fdf)
 	v_d = cam->dir_vec;
 	v_r.x = (v_d->v_alpha.x * v3.x * cam->dim.x)
 		+ (v_d->v_beta.x * v3.y * cam->dim.y)
-		+ (v_d->v_gamma.x * v3.z * cam->dim.z);
+		+ (v_d->v_gamma.x * v3.z * cam->dim.z)
+		+ cam->pos.x;
 	v_r.y = (v_d->v_alpha.y * v3.x * cam->dim.x)
 		+ (v_d->v_beta.y * v3.y * cam->dim.y)
-		+ (v_d->v_gamma.y * v3.z * cam->dim.z);
+		+ (v_d->v_gamma.y * v3.z * cam->dim.z)
+		+ cam->pos.y;
 	ft_center_fdf(&v_r, fdf);
 	return (v_r);
 }
