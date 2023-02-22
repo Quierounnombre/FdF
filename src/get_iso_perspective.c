@@ -6,11 +6,27 @@
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 14:59:40 by vicgarci          #+#    #+#             */
-/*   Updated: 2023/02/20 17:38:07 by vicgarci         ###   ########.fr       */
+/*   Updated: 2023/02/22 18:02:20 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FdF.h"
+
+static void	ft_center_fdf(t_vector2D *v, t_FdF_info *fdf)
+{
+	static float	center_x;
+	static float	center_y;
+
+	if (!center_x)
+	{
+		center_x = (WIDTH / 2) - ((fdf->map->map_size_x / 2) * fdf->cam->dim.x)
+			+ (WIDTH / 10);
+		center_y = (HEIGHT / 2) - (((fdf->map->map_size_y - 1) / 2)
+				* fdf->cam->dim.y);
+	}
+	v->x += center_x;
+	v->y += center_y;
+}
 
 t_vector2D	get_iso_perspective(t_vector3D v3, t_FdF_info *fdf)
 {
@@ -22,11 +38,10 @@ t_vector2D	get_iso_perspective(t_vector3D v3, t_FdF_info *fdf)
 	v_d = cam->dir_vec;
 	v_r.x = (v_d->v_alpha.x * v3.x * cam->dim.x)
 		+ (v_d->v_beta.x * v3.y * cam->dim.y)
-		+ (v_d->v_gamma.x * v3.z * cam->dim.z)
-		+ (WIDTH / 2);
+		+ (v_d->v_gamma.x * v3.z * cam->dim.z);
 	v_r.y = (v_d->v_alpha.y * v3.x * cam->dim.x)
 		+ (v_d->v_beta.y * v3.y * cam->dim.y)
-		+ (v_d->v_gamma.y * v3.z * cam->dim.z)
-		+ (HEIGHT / 2);
+		+ (v_d->v_gamma.y * v3.z * cam->dim.z);
+	ft_center_fdf(&v_r, fdf);
 	return (v_r);
 }
