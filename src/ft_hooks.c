@@ -6,7 +6,7 @@
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 16:20:39 by vicgarci          #+#    #+#             */
-/*   Updated: 2023/02/22 18:52:05 by vicgarci         ###   ########.fr       */
+/*   Updated: 2023/02/23 16:57:05 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,13 @@ static void	key_hook(void	*param)
 		s_hook(fdf);
 	if (mlx_is_key_down(fdf->mlx, MLX_KEY_Z))
 		z_hook(fdf);
+	if (mlx_is_key_down(fdf->mlx, MLX_KEY_X))
+		x_hook(fdf);
 }
 
 void	ft_hooks(t_FdF_info *fdf)
 {
 	mlx_loop_hook(fdf->mlx, key_hook, fdf);
+	mlx_scroll_hook(fdf->mlx, scroll_hook, fdf);
 	mlx_close_hook(fdf->mlx, close_fdf, fdf);
 }

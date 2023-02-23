@@ -6,7 +6,7 @@
 #    By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/17 14:56:53 by vicgarci          #+#    #+#              #
-#    Updated: 2023/02/22 18:51:25 by vicgarci         ###   ########.fr        #
+#    Updated: 2023/02/23 16:56:46 by vicgarci         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -58,7 +58,9 @@ FILES = src/main.c \
 		src/hooks/d_hook.c \
 		src/hooks/w_hook.c \
 		src/hooks/s_hook.c \
-		src/hooks/z_hook.c
+		src/hooks/z_hook.c \
+		src/hooks/x_hook.c \
+		src/hooks/scroll_hook.c
 
 OBJS = ${FILES:.c=.o}
 
