@@ -6,7 +6,7 @@
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 18:45:20 by vicgarci          #+#    #+#             */
-/*   Updated: 2023/02/23 17:15:13 by vicgarci         ###   ########.fr       */
+/*   Updated: 2023/02/27 14:48:44 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	s_hook(t_FdF_info *fdf)
 {
-	if (fdf->cam->pos.y != (INT_MAX - 1))
+	if ((int)fdf->cam->pos.y != (INT_MAX - 1))
 	{
 		fdf->cam->pos.y++;
 		ft_printf("Posición actual de la camara (%d, %d)\n",

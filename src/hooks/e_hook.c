@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   x_hook.c                                           :+:      :+:    :+:   */
+/*   e_hook.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/23 16:36:02 by vicgarci          #+#    #+#             */
-/*   Updated: 2023/02/27 14:49:41 by vicgarci         ###   ########.fr       */
+/*   Created: 2023/02/27 14:51:20 by vicgarci          #+#    #+#             */
+/*   Updated: 2023/02/27 14:53:13 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../FdF.h"
 
-void	x_hook(t_FdF_info *fdf)
+void	e_hook(t_FdF_info *fdf)
 {
-	if ((int)fdf->cam->dim.z != (INT_MAX - 1))
+	if ((int)fdf->cam->ang->alpha != (INT_MIN + 1))
 	{
-		fdf->cam->dim.z += 0.1f;
-		ft_printf("Valor de la cota: %d\n", (int)fdf->cam->dim.z);
+		fdf->cam->ang->beta -= 0.1f;
+		load_angles(fdf->cam->ang, fdf->cam->dir_vec);
 		set_dark(fdf);
 		draw(fdf);
 	}
 	else
-		ft_printf("No puedo pasarme del limite inferior de los ints\n");
+		ft_printf("No puedo superar el limite de los ints\n");
 }
