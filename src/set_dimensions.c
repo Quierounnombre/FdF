@@ -6,7 +6,7 @@
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 13:26:32 by vicgarci          #+#    #+#             */
-/*   Updated: 2023/02/22 18:00:59 by vicgarci         ###   ########.fr       */
+/*   Updated: 2023/02/27 16:04:36 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,15 +18,15 @@ t_vector3D	set_dimensions(t_map *map)
 	float		cut_correct;
 
 	cut_correct = 1;
-	printf("Map %d | %d\n", map->map_size_x, map->map_size_y);
+	ft_printf("Map %d | %d\n", map->map_size_x, map->map_size_y);
 	result.x = ((HEIGHT + WIDTH) * 3)
 		/ (map->map_size_x * (map->map_size_y - 1));
 	if (!result.x)
 		result.x = 2.5;
 	result.y = result.x;
 	result.z = 1;
-	printf("Zoom: %f\n", result.x);
-	printf("Escala de z: %f\n", result.z);
+	ft_printf("Zoom: %d\n", (int)result.x);
+	ft_printf("Escala de z: %d\n", (int)result.z);
 	return (result);
 }
 //The cut correction, solve the amount of cuts needed to represent a line
