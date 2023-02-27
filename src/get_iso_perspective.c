@@ -6,7 +6,7 @@
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 14:59:40 by vicgarci          #+#    #+#             */
-/*   Updated: 2023/02/23 17:06:19 by vicgarci         ###   ########.fr       */
+/*   Updated: 2023/02/27 17:51:49 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,7 @@ static void	ft_center_fdf(t_vector2D *v, t_FdF_info *fdf)
 
 	if (!center_x)
 	{
-		center_x = (WIDTH / 2) - ((fdf->map->map_size_x / 2) * fdf->cam->dim.x)
-			+ (WIDTH / 10);
+		center_x = (WIDTH / 2) - ((fdf->map->map_size_x / 2) * fdf->cam->dim.x);
 		center_y = (HEIGHT / 2) - (((fdf->map->map_size_y - 1) / 2)
 				* fdf->cam->dim.y);
 	}

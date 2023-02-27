@@ -6,7 +6,7 @@
 #    By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/17 14:56:53 by vicgarci          #+#    #+#              #
-#    Updated: 2023/02/27 15:56:22 by vicgarci         ###   ########.fr        #
+#    Updated: 2023/02/27 16:59:30 by vicgarci         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -97,8 +97,4 @@ mlx43:
 libft:
 	$(MAKE) -C ./libft_def
 
-
-norma:
-	@echo 6966205b5b2024286e6f726d696e65747465207c206772657020274572726f7227207c207763202d6c29202d65712030205d5d3b207468656e206e6f726d696e657474653b20656c736520286e6f726d696e65747465207c206772657020274572726f7227293b206669 | xxd -r -p | zsh
-
-.PHONY: all clean fclean re libft norma mlx43
+.PHONY: all clean fclean re libft mlx43

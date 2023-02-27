@@ -6,7 +6,7 @@
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 13:55:46 by vicgarci          #+#    #+#             */
-/*   Updated: 2023/02/27 15:46:53 by vicgarci         ###   ########.fr       */
+/*   Updated: 2023/02/27 17:52:33 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ static t_bool	init_cam(t_cam *cam)
 		cam->ang->alpha = 0;
 		cam->ang->beta = 2.094395;
 		cam->ang->gamma = 4.18879;
-		cam->pos.x = 0;
+		cam->pos.x = WIDTH / 10;
 		cam->pos.y = 0;
 		cam->dir_vec = (t_dir_vectors *)malloc(sizeof(t_dir_vectors));
 		if (cam->dir_vec)
