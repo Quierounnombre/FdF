@@ -6,7 +6,7 @@
 #    By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/17 14:56:53 by vicgarci          #+#    #+#              #
-#    Updated: 2023/02/27 14:59:48 by vicgarci         ###   ########.fr        #
+#    Updated: 2023/02/27 15:56:22 by vicgarci         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -60,8 +60,14 @@ FILES = src/main.c \
 		src/hooks/s_hook.c \
 		src/hooks/z_hook.c \
 		src/hooks/x_hook.c \
-		src/hooks/q_hook.c \
-		src/hooks/e_hook.c \
+		src/hooks/h_hook.c \
+		src/hooks/y_hook.c \
+		src/hooks/u_hook.c \
+		src/hooks/j_hook.c \
+		src/hooks/i_hook.c \
+		src/hooks/k_hook.c \
+		src/hooks/left_hook.c \
+		src/hooks/right_hook.c \
 		src/hooks/space_hook.c \
 		src/hooks/scroll_hook.c
 

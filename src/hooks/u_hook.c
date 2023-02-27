@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   q_hook.c                                           :+:      :+:    :+:   */
+/*   u_hook.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/27 14:34:54 by vicgarci          #+#    #+#             */
-/*   Updated: 2023/02/27 14:54:26 by vicgarci         ###   ########.fr       */
+/*   Created: 2023/02/27 15:33:30 by vicgarci          #+#    #+#             */
+/*   Updated: 2023/02/27 15:33:50 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../FdF.h"
 
-void	q_hook(t_FdF_info *fdf)
+void	u_hook(t_FdF_info *fdf)
 {
-	if ((int)fdf->cam->ang->alpha != (INT_MAX - 1))
+	if ((int)fdf->cam->ang->beta != (INT_MAX - 1))
 	{
 		fdf->cam->ang->beta += 0.1f;
 		load_angles(fdf->cam->ang, fdf->cam->dir_vec);
