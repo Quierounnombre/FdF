@@ -6,7 +6,7 @@
 #    By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/17 14:56:53 by vicgarci          #+#    #+#              #
-#    Updated: 2023/02/27 16:59:30 by vicgarci         ###   ########.fr        #
+#    Updated: 2023/02/28 15:14:05 by vicgarci         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -54,6 +54,7 @@ FILES = src/main.c \
 		src/set_dimensions.c \
 		src/load_angles.c \
 		src/set_dark.c \
+		src/select_perspective.c \
 		src/hooks/a_hook.c \
 		src/hooks/d_hook.c \
 		src/hooks/w_hook.c \

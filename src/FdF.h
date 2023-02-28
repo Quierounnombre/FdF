@@ -6,7 +6,7 @@
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 14:30:33 by vicgarci          #+#    #+#             */
-/*   Updated: 2023/02/27 15:57:18 by vicgarci         ###   ########.fr       */
+/*   Updated: 2023/02/28 18:20:43 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include "../libft_def/libftprintf.h"
 # include "../MLX42/include/MLX42/MLX42.h"
+# include "FdF_defines.h"
 
 # ifndef WIDTH
 #  define WIDTH 1000
@@ -57,12 +58,23 @@ typedef struct s_dir_vectors
 	t_vector2D	v_gamma;
 }					t_dir_vectors;
 
+typedef struct s_perspective
+{
+	t_angle	isometrica;
+	t_angle	dimetrica;
+	t_angle	trimetrica;
+	t_angle	caballera;
+	t_angle	militar;
+	int		current;
+}				t_perspective;
+
 typedef struct s_cam
 {
 	t_angle			*ang;
 	t_vector3D		dim;
 	t_dir_vectors	*dir_vec;
 	t_vector2D		pos;
+	t_perspective	*perps;
 }				t_cam;
 
 typedef struct s_FdF_info
@@ -104,6 +116,7 @@ void			set_dark(t_FdF_info *fdf);
 
 t_vector3D		set_dimensions(t_map *map);
 void			load_angles(t_angle *ang, t_dir_vectors *v);
+void			select_perspective(t_FdF_info *fdf);
 
 /*-----HOOKS-----*/
 
