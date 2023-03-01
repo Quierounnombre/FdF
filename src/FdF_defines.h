@@ -6,7 +6,7 @@
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 17:59:24 by vicgarci          #+#    #+#             */
-/*   Updated: 2023/02/28 18:20:26 by vicgarci         ###   ########.fr       */
+/*   Updated: 2023/03/01 15:06:09 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,10 @@
 
 # ifndef G_40
 #  define G_40 0.698132
+# endif
+
+# ifndef G_45
+#  define G_45 0.785398
 # endif
 
 # ifndef G_50
@@ -69,6 +73,10 @@
 #  define G_130 2.26893
 # endif
 
+# ifndef G_135
+#  define G_135 2.35619
+# endif
+
 # ifndef G_140
 #  define G_140 2.44346
 # endif
@@ -105,6 +113,10 @@
 #  define G_220 3.83972
 # endif
 
+# ifndef G_225
+#  define G_225 3.92699
+# endif
+
 # ifndef G_230
 #  define G_230 4.01426
 # endif
@@ -139,6 +151,10 @@
 
 # ifndef G_310
 #  define G_310 5.41052
+# endif
+
+# ifndef G_315
+#  define G_315 5.49779
 # endif
 
 # ifndef G_320
