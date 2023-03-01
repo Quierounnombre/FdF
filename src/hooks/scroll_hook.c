@@ -6,7 +6,7 @@
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 16:48:20 by vicgarci          #+#    #+#             */
-/*   Updated: 2023/02/27 17:21:22 by vicgarci         ###   ########.fr       */
+/*   Updated: 2023/03/01 16:28:49 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 static void	zoom_out(t_FdF_info *fdf)
 {
-	if ((int)fdf->cam->dim.x > 0.5f && (int)fdf->cam->dim.y > 0.5f)
+	if ((int)fdf->cam->dim.x > 1 && (int)fdf->cam->dim.y > 1)
 	{
-		fdf->cam->dim.x -= 0.5f;
-		fdf->cam->dim.y -= 0.5f;
+		fdf->cam->dim.x -= 1;
+		fdf->cam->dim.y -= 1;
 	}
 	set_dark(fdf);
 	draw(fdf);
@@ -28,8 +28,8 @@ static void	zoom_in(t_FdF_info *fdf)
 	if ((int)fdf->cam->dim.x < (INT_MAX - 1)
 		&& (int)fdf->cam->dim.y < (INT_MAX - 1))
 	{
-		fdf->cam->dim.x += 0.5f;
-		fdf->cam->dim.y += 0.5f;
+		fdf->cam->dim.x += 1;
+		fdf->cam->dim.y += 1;
 	}
 	set_dark(fdf);
 	draw(fdf);
