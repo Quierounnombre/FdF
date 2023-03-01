@@ -6,7 +6,7 @@
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 13:55:46 by vicgarci          #+#    #+#             */
-/*   Updated: 2023/03/01 15:07:25 by vicgarci         ###   ########.fr       */
+/*   Updated: 2023/03/01 15:37:54 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,18 +29,18 @@ static void	load_perspectives(t_cam *cam)
 	cam->perps->isometrica.beta = G_120;
 	cam->perps->isometrica.gamma = G_240;
 	cam->perps->current = 1;
-	cam->perps->caballera.alpha = G_45;
-	cam->perps->caballera.beta = G_180;
-	cam->perps->caballera.gamma = G_225;
-	cam->perps->dimetrica.alpha = 1.8326f;
-	cam->perps->dimetrica.beta = 1.8326f;
-	cam->perps->dimetrica.gamma = 2.61799f;
-	cam->perps->trimetrica.alpha = 1.74533f;
-	cam->perps->trimetrica.beta = cam->ang->alpha;
-	cam->perps->trimetrica.gamma = 2.44346f;
-	cam->perps->militar.alpha = 1.5708f;
-	cam->perps->militar.beta = cam->ang->alpha;
-	cam->perps->militar.gamma = 2.61799f;
+	cam->perps->caballera.alpha = G_0;
+	cam->perps->caballera.beta = G_45;
+	cam->perps->caballera.gamma = -G_90;
+	cam->perps->dimetrica.alpha = G_0;
+	cam->perps->dimetrica.beta = G_125;
+	cam->perps->dimetrica.gamma = -G_110;
+	cam->perps->trimetrica.alpha = G_0;
+	cam->perps->trimetrica.beta = G_100;
+	cam->perps->trimetrica.gamma = G_220;
+	cam->perps->militar.alpha = G_0;
+	cam->perps->militar.beta = G_90;
+	cam->perps->militar.gamma = G_225;
 }
 /*---NOTAS----*/
 /*La perspectiva caballera se realiza con los angulos de 45, 90 y 225
