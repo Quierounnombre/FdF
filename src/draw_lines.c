@@ -33,6 +33,8 @@ static int	calc_n_dots(float *x_offset, float *y_offset, uint32_t *color)
 	int	n_dots;
 
 	n_dots = sqrt(pow(*x_offset, 2) + pow(*y_offset, 2));
+	if (!n_dots)
+		n_dots = 1;
 	*x_offset /= n_dots;
 	*y_offset /= n_dots;
 	*color /= n_dots;

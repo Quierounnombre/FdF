@@ -6,7 +6,7 @@
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 13:55:46 by vicgarci          #+#    #+#             */
-/*   Updated: 2023/03/01 15:37:54 by vicgarci         ###   ########.fr       */
+/*   Updated: 2023/03/02 18:05:57 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,11 +42,6 @@ static void	load_perspectives(t_cam *cam)
 	cam->perps->militar.beta = G_90;
 	cam->perps->militar.gamma = G_225;
 }
-/*---NOTAS----*/
-/*La perspectiva caballera se realiza con los angulos de 45, 90 y 225
-respectivamente, pero en este caso le he añadido 90º adicionales a beta
-el eje YZ(si recuerdo bien) para que se endereze la imagen*/
-
 
 static t_bool	init_cam(t_cam *cam)
 {

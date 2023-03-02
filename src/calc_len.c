@@ -6,7 +6,7 @@
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 16:29:53 by vicgarci          #+#    #+#             */
-/*   Updated: 2023/02/15 17:16:58 by vicgarci         ###   ########.fr       */
+/*   Updated: 2023/03/02 18:51:38 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ int	calc_len(char *s)
 		{
 			if (!hexa_calc(&s))
 				return (0);
+			i++;
 		}
 		else if (!normal_len(*s, &alloc_int, &i))
 			return (0);
@@ -78,27 +79,22 @@ static t_bool	expand_len(char c, t_bool *alloc, t_bool *minus)
 
 static t_bool	hexa_calc(char **s)
 {
-	int		counter;
-	t_bool	coma;
-
-	counter = 0;
-	coma = false;
+	if ((*(*s)) != ',')
+		return (false);
+	if ((*(++(*s))) != '0')
+		return (false);
+	if ((*(++(*s))) != 'x')
+		return (false);
+	(*s)++;
 	while (**s)
 	{
-		if (**s == ',' && coma == false)
+		if ((!ft_ishexa(**s)))
 		{
-			counter = 9;
-			coma = true;
+			if (ft_isspace(**s))
+				return (true);
+			else
+				return (false);
 		}
-		else if (**s != '0' && counter == 8)
-			return (false);
-		else if (**s != 'x' && counter == 7)
-			return (false);
-		else if ((!ft_ishexa(**s) && counter >= 0 && counter <= 6))
-			return (false);
-		counter--;
-		if (counter == 0)
-			break ;
 		(*s)++;
 	}
 	return (true);

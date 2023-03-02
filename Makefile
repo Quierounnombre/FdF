@@ -6,7 +6,7 @@
 #    By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/17 14:56:53 by vicgarci          #+#    #+#              #
-#    Updated: 2023/03/01 16:22:27 by vicgarci         ###   ########.fr        #
+#    Updated: 2023/03/02 17:48:02 by vicgarci         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -86,7 +86,8 @@ clean:
 	$(MAKE)	clean -C ./MLX42
 
 fclean: clean
-	$(RM) $(NAME) $(LIBFT) $(MLX42)
+	$(MAKE) fclean -C ./libft_def
+	$(RM) $(NAME) $(MLX42)
 
 
 re: fclean libft mlx43 $(NAME)
