@@ -6,7 +6,7 @@
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 13:49:10 by vicgarci          #+#    #+#             */
-/*   Updated: 2023/02/27 14:26:01 by vicgarci         ###   ########.fr       */
+/*   Updated: 2023/03/03 17:10:32 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,7 @@ static void	draw_dots(t_FdF_info *fdf)
 
 void	draw(t_FdF_info *fdf)
 {
+	set_dark(fdf);
 	draw_dots(fdf);
 	ft_printf("\n--------TERMINE DE DIBUJAR--------\n\n");
 }

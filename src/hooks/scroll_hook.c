@@ -6,7 +6,7 @@
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 16:48:20 by vicgarci          #+#    #+#             */
-/*   Updated: 2023/03/01 16:28:49 by vicgarci         ###   ########.fr       */
+/*   Updated: 2023/03/03 17:14:57 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ static void	zoom_out(t_FdF_info *fdf)
 		fdf->cam->dim.x -= 1;
 		fdf->cam->dim.y -= 1;
 	}
-	set_dark(fdf);
 	draw(fdf);
 }
 
@@ -31,7 +30,6 @@ static void	zoom_in(t_FdF_info *fdf)
 		fdf->cam->dim.x += 1;
 		fdf->cam->dim.y += 1;
 	}
-	set_dark(fdf);
 	draw(fdf);
 }
 

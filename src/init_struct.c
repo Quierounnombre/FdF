@@ -6,7 +6,7 @@
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 13:55:46 by vicgarci          #+#    #+#             */
-/*   Updated: 2023/03/02 18:05:57 by vicgarci         ###   ########.fr       */
+/*   Updated: 2023/03/03 17:43:40 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,7 @@ static t_bool	init_cam(t_cam *cam)
 		}
 		free(cam->ang);
 	}
+	free(cam);
 	return (false);
 }
 
@@ -90,7 +91,7 @@ t_FdF_info	*init_struct(void)
 					if (init_cam(struk->cam))
 						return (struk);
 				}
-				free(struk->cam);
+				free_map(map);
 			}
 			free(map);
 		}

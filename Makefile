@@ -6,16 +6,16 @@
 #    By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/17 14:56:53 by vicgarci          #+#    #+#              #
-#    Updated: 2023/03/02 17:48:02 by vicgarci         ###   ########.fr        #
+#    Updated: 2023/03/03 17:09:21 by vicgarci         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = FdF
+NAME = fdf
 LIBFT = libft_def/libftprintf.a
 MLX42 = MLX42/libmlx42.a
 
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror #-fsanitize=address -g3
+CFLAGS = -Wall -Wextra -Werror -g3 #-fsanitize=address -g3
 MLXFLAGS = -lglfw -L "/Users/vicgarci/.brew/opt/glfw/lib/" -D DEBUG=1
 RM = rm -f
 

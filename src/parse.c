@@ -6,7 +6,7 @@
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 14:38:50 by vicgarci          #+#    #+#             */
-/*   Updated: 2023/02/07 13:43:06 by vicgarci         ###   ########.fr       */
+/*   Updated: 2023/03/03 17:28:48 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ t_bool	parse(int argc, char **argv)
 	size_t	i;
 
 	i = 0;
+	if (WIDTH < 100 || HEIGHT < 100)
+		return (false);
 	if (argc != MAX_ARGS)
 	{
 		parse_log(argc, argv[0][i]);
@@ -47,6 +49,6 @@ static void	parse_log(int argc, const char c)
 		ft_printf("Me has introducido más de %d argumentos\n", MAX_ARGS);
 	else
 	{
-		ft_printf("El caracter %c, no esta permitido", c);
+		ft_printf("El caracter %c, no esta permitido\n", c);
 	}
 }
