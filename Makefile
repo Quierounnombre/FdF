@@ -6,7 +6,7 @@
 #    By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/17 14:56:53 by vicgarci          #+#    #+#              #
-#    Updated: 2023/03/03 17:09:21 by vicgarci         ###   ########.fr        #
+#    Updated: 2023/03/04 18:49:20 by vicgarci         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ MLX42 = MLX42/libmlx42.a
 
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror -g3 #-fsanitize=address -g3
-MLXFLAGS = -lglfw -L "/Users/vicgarci/.brew/opt/glfw/lib/" -D DEBUG=1
+MLXFLAGS = -lglfw -L "glwf" -D DEBUG=1
 RM = rm -f
 
 BLACK = \033[0;30m
