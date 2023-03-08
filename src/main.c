@@ -6,7 +6,7 @@
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 14:24:17 by vicgarci          #+#    #+#             */
-/*   Updated: 2023/03/03 17:11:21 by vicgarci         ###   ########.fr       */
+/*   Updated: 2023/03/08 16:30:23 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,4 +23,5 @@ int	main(int argc, char **argv)
 		mlx_loop(fdf->mlx);
 		free_struct(fdf);
 	}
+	system ("Leaks fdf");
 }
