@@ -3,19 +3,19 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+         #
+#    By: aeiou <aeiou@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/17 14:56:53 by vicgarci          #+#    #+#              #
-#    Updated: 2023/03/04 18:49:20 by vicgarci         ###   ########.fr        #
+#    Updated: 2023/12/20 22:40:52 by aeiou            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = fdf
-LIBFT = libft_def/libftprintf.a
-MLX42 = MLX42/libmlx42.a
+LIBFT = libft_def/libft.a
+MLX42 = MLX42/build/libmlx42.a
 
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror -g3 #-fsanitize=address -g3
+CFLAGS = -Wall -Wextra -Werror #-fsanitize=address -g3
 MLXFLAGS = -lglfw -L "glwf" -D DEBUG=1
 RM = rm -f
 
@@ -83,7 +83,7 @@ $(NAME): $(OBJS)
 clean:
 	$(RM) $(OBJS)
 	$(MAKE) clean -C ./libft_def
-	$(MAKE)	clean -C ./MLX42
+	$(MAKE)	clean -C ./MLX42/build
 
 fclean: clean
 	$(MAKE) fclean -C ./libft_def
@@ -94,7 +94,7 @@ re: fclean libft mlx43 $(NAME)
 
 #NOMBRE IGUAL A NOMBRE DE CARPETA CACA
 mlx43:
-	$(MAKE) -C ./MLX42
+	$(MAKE) -C ./MLX42/build
 
 libft:
 	$(MAKE) -C ./libft_def

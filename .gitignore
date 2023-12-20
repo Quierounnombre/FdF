@@ -1,0 +1,5 @@
+*.o
+*.a
+fdf
+MLX42
+.vscode
