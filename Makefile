@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: aeiou <aeiou@student.42.fr>                +#+  +:+       +#+         #
+#    By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/17 14:56:53 by vicgarci          #+#    #+#              #
-#    Updated: 2023/12/20 22:40:52 by aeiou            ###   ########.fr        #
+#    Updated: 2024/10/21 17:12:52 by vicgarci         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ MLX42 = MLX42/build/libmlx42.a
 
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror #-fsanitize=address -g3
-MLXFLAGS = -lglfw -L "glwf" -D DEBUG=1
+MLXFLAGS = -lglfw -L "glwf" -D DEBUG=1 -lm
 RM = rm -f
 
 BLACK = \033[0;30m
@@ -77,7 +77,7 @@ OBJS = ${FILES:.c=.o}
 all: mlx43 libft $(NAME)
 
 $(NAME): $(OBJS)
-	@$(CC) $(CFLAGS) $(LIBFT) $(MLX42) $(MLXFLAGS) $(OBJS) -o $(NAME)
+	@$(CC) $(CFLAGS) $(OBJS) -o $(NAME) $(LIBFT) $(MLX42) $(MLXFLAGS)
 	@echo "$(LBLUE)\nFDF compilado con éxito\n$(RESET)"
 
 clean:

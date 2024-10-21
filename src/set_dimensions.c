@@ -6,7 +6,7 @@
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 13:26:32 by vicgarci          #+#    #+#             */
-/*   Updated: 2023/02/27 17:29:28 by vicgarci         ###   ########.fr       */
+/*   Updated: 2024/10/21 16:40:12 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,7 @@
 t_vector3D	set_dimensions(t_map *map)
 {
 	t_vector3D	result;
-	float		cut_correct;
 
-	cut_correct = 1;
 	ft_printf("Map %d | %d\n", map->map_size_x, map->map_size_y - 1);
 	result.x = ((HEIGHT + WIDTH) * 3)
 		/ (map->map_size_x * (map->map_size_y - 1));
