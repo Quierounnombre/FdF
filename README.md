@@ -11,7 +11,7 @@
 
   <h2>🎥 Demo Video</h2>
   <video
-	src="Screen-Recording.mp4">
+	src="Screen-Recording.mp4" controls>
   </video>
 </body>
 </html>
