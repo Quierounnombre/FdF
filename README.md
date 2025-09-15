@@ -1,9 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Graphic Project - 42 Madrid</title>
-</head>
 <body>
   <h1>🏔️ Graphic Project for 42 Madrid</h1>
 
@@ -14,5 +10,8 @@
   </p>
 
   <h2>🎥 Demo Video</h2>
+  <video
+	src="Screen-Recording.mp4">
+  </video>
 </body>
 </html>
