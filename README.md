@@ -10,6 +10,8 @@
   </p>
 
   <h2>🎥 Demo Video</h2>
-[Watch the video](./path/to/video.mp4)
+<a href="path/to/video.mp4">
+  <img src="path/to/thumbnail.png" alt="Watch the video" width="500">
+</a>
 </body>
 </html>
