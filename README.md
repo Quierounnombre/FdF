@@ -10,8 +10,6 @@
   </p>
 
   <h2>🎥 Demo Video</h2>
-  <video
-	src="Screen-Recording.mp4" controls>
-  </video>
+[Watch the video](./path/to/video.mp4)
 </body>
 </html>
